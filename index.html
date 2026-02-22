@@ -96,7 +96,7 @@
         <div class="px-6 py-4 flex justify-between items-center relative z-20 container mx-auto">
             <!-- Logo Fixa -->
             <a href="#home" class="flex items-center gap-2 h-12">
-                <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/refs/heads/main/F.svg" alt="F Icon" class="h-11 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]">
+                <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/refs/heads/main/F.svg" alt="F Icon" class="h-10 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]">
             </a>
 
             <!-- Navegação (Desktop) -->
@@ -105,7 +105,7 @@
                 <a href="#servicos" class="hover:text-primary transition">Especialidades</a>
                 <a href="#seguradoras" class="hover:text-primary transition">Seguradoras</a>
                 <a href="#galeria" class="hover:text-primary transition">Galeria</a>
-                <a href="#localizacao" id="nav-contato" class="hover:text-primary transition">Orçamento / Mapa</a>
+                <a href="#localizacao" id="nav-contato" class="hover:text-primary transition">Mapa</a>
             </nav>
 
             <!-- Contato e Botão (Desktop) -->
@@ -140,7 +140,7 @@
             <a href="#servicos" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50">Especialidades</a>
             <a href="#seguradoras" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50">Seguradoras</a>
             <a href="#galeria" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50">Galeria</a>
-            <a href="#localizacao" id="mobile-nav-contato" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50">Orçamento e Mapa</a>
+            <a href="#localizacao" id="mobile-nav-contato" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50">Mapa</a>
             <div class="mt-4 flex flex-col gap-2">
                 <span class="text-xs text-gray-400 uppercase">Contatos Rápidos</span>
                 <a href="tel:+551934113939" class="text-sm text-white py-1"><i class="fa-solid fa-phone text-primary mr-2"></i> Fixo: (19) 3411-3939</a>
@@ -690,8 +690,7 @@
             </div>
 
             <div class="mt-8 text-center">
-                <!-- Substitua o link pelo link do Google Maps da sua empresa -->
-                <a href="https://www.google.com/maps" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition shadow-lg">
+                <a href="https://www.google.com/search?q=fasercar&ie=UTF-8#lrd=0x94c63046b72bf8c7:0xc2eeae048a4a29d2,1,,,," target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition shadow-lg">
                     Ver todas as avaliações no Google <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
@@ -826,7 +825,7 @@
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
             <!-- Logo e Direitos -->
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/main/f%C3%A1ser-acento.svg" alt="Fáser Car Logo" class="h-16 mb-4 object-contain grayscale-0 opacity-90 hover:opacity-100 transition drop-shadow-[0_0_17px_rgba(255,255,255,0.5)]">
+                <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/main/f%C3%A1ser-acento.svg" alt="Fáser Car Logo" class="h-16 mb-4 object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">
                 <p class="text-xs text-zinc-500">© 2026 Fáser Car. Todos os direitos reservados.</p>
                 <p class="text-xs text-zinc-600 mt-1">Desenvolvido para alta performance por <strong>Arnaldo Amaro</strong>.</p>
             </div>
@@ -893,9 +892,6 @@
 
             // --- CARROSSEL DE FUNDO ---
             const bgContainer = document.getElementById('hero-bg-container');
-            
-            // Imagens da pasta "carrossel" numeradas. 
-            // Pode adicionar mais ficheiros à lista abaixo seguindo o mesmo padrão ('carrossel/5.jpg', etc.)
             const images = [
                 'carrossel/1.jpg',
                 'carrossel/2.jpg',
@@ -926,9 +922,7 @@
             
             // Referências aos itens do menu
             const navSobre = document.getElementById('nav-sobre');
-            const navContato = document.getElementById('nav-contato');
             const mobileNavSobre = document.getElementById('mobile-nav-sobre');
-            const mobileNavContato = document.getElementById('mobile-nav-contato');
             
             window.addEventListener('scroll', () => {
                 // Controle do Botão Voltar ao Topo
