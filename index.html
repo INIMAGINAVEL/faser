@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fáser Car - Funilaria, Pintura e Estética Automotiva</title>
+
+    <!-- Favicon: O ícone 'F' na aba do navegador -->
+    <link rel="icon" href="https://drive.google.com/uc?export=view&id=1ohrIbNjFKx0vXSKrgjfkOAIUwMp8VF60" type="image/png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#C8102E',
+                        primaryHover: '#a00d25',
+                        brandGreen: '#71c238',
+                        darkBg: '#0d0d0d',
+                        darkCard: '#141414',
+                        textGray: '#a1a1aa'
+                    },
+                    fontSize: {
+                        'xs': '0.85rem',   /* Aumentado proporcionalmente */
+                        'sm': '1.05rem',   /* Aumentado proporcionalmente */
+                        'base': '1.15rem', /* Aumentado proporcionalmente */
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            /* Compensação para o cabeçalho fixo não cobrir os títulos ao clicar no menu */
+            scroll-padding-top: 80px;
+        }
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+        }
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px #ffffff;
+        }
+        /* Configuração do Carrossel */
+        #hero-bg-container {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            background-color: #0d0d0d;
+        }
+        .carousel-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(13, 13, 13, 0.98) 35%, rgba(13, 13, 13, 0.6));
+            z-index: 1;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0d0d0d; }
+        ::-webkit-scrollbar-thumb { background: #333; }
+        ::-webkit-scrollbar-thumb:hover { background: #C8102E; }
+
+        /* Ocultar scrollbar do carrossel mantendo o scroll funcional */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+    <!-- Cabeçalho (Header) FIXO -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 transition-all">
+        <div class="px-6 py-4 flex justify-between items-center relative z-20 container mx-auto">
+            <!-- Logo Dinâmica -->
+            <a href="#home" class="flex items-center gap-2 h-12">
+                <img id="logo-small" src="https://drive.google.com/uc?export=view&id=1ohrIbNjFKx0vXSKrgjfkOAIUwMp8VF60" alt="F Icon" class="h-10 object-contain transition-all duration-300">
+                <img id="logo-full" src="https://drive.google.com/uc?export=view&id=1WljwHLoOKgO20ihHvpHI3E72v4WsFFpl" alt="Fáser Car Logo" class="h-10 md:h-12 object-contain hidden transition-all duration-300">
+            </a>
+
+            <!-- Navegação (Desktop) -->
+            <nav class="hidden lg:flex gap-8 text-sm font-semibold text-white">
+                <a href="#home" id="nav-sobre" class="hover:text-primary transition hidden">Sobre</a>
+                <a href="#servicos" class="hover:text-primary transition">Especialidades</a>
+                <a href="#seguradoras" class="hover:text-primary transition">Seguradoras</a>
+                <a href="#galeria" class="hover:text-primary transition">Galeria</a>
+                <a href="#localizacao" id="nav-contato" class="hover:text-primary transition">Orçamento / Mapa</a>
+            </nav>
+
+            <!-- Contato e Botão (Desktop) -->
+            <div class="hidden lg:flex items-center gap-6">
+                <div class="flex items-center gap-5 border-r border-zinc-700 pr-6">
+                    <div class="flex flex-col text-right">
+                        <span class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold">Telefone Fixo</span>
+                        <a href="tel:+551934113939" class="text-lg font-bold text-white hover:text-primary transition">(19) 3411-3939</a>
+                    </div>
+                    <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded border border-zinc-800">
+                        <i class="fa-brands fa-whatsapp text-brandGreen text-2xl"></i>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] text-brandGreen uppercase tracking-wider font-bold">Celular / WhatsApp</span>
+                            <a href="https://wa.me/5519996159600" target="_blank" class="text-lg font-bold text-white hover:text-brandGreen transition">(19) 99615-9600</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#localizacao" class="bg-primary text-white px-6 py-2.5 font-bold text-base hover:bg-primaryHover transition rounded">Fazer Orçamento</a>
+            </div>
+
+            <!-- Botão Menu Mobile -->
+            <div class="lg:hidden flex items-center gap-5">
+                <a href="#localizacao" class="text-white text-2xl hover:text-primary transition" title="Contatos"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://wa.me/5519996159600" target="_blank" class="text-brandGreen text-3xl hover:text-green-400 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <button id="mobile-menu-btn" class="text-white text-3xl focus:outline-none ml-1"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile (Dropdown) -->
+        <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black/95 border-b border-zinc-800 flex-col py-4 px-6 z-10 shadow-2xl transition-all">
+            <a href="#home" id="mobile-nav-sobre" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50 hidden">Sobre</a>
+            <a href="#servicos" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50">Especialidades</a>
+            <a href="#seguradoras" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50">Seguradoras</a>
+            <a href="#galeria" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50">Galeria</a>
+            <a href="#localizacao" id="mobile-nav-contato" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50">Orçamento e Mapa</a>
+            <div class="mt-4 flex flex-col gap-2">
+                <span class="text-xs text-gray-400 uppercase">Contatos Rápidos</span>
+                <a href="tel:+551934113939" class="text-sm text-white py-1"><i class="fa-solid fa-phone text-primary mr-2"></i> Fixo: (19) 3411-3939</a>
+                <a href="https://wa.me/5519996159600" target="_blank" class="text-sm text-white py-1"><i class="fa-brands fa-whatsapp text-brandGreen mr-2"></i> Celular / Whats: (19) 99615-9600</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Seção Hero com Carrossel -->
+    <section id="home" class="min-h-screen flex items-center relative pt-20 border-b border-primary/30">
+        <!-- Background Carrossel -->
+        <div id="hero-bg-container">
+            <!-- Imagens inseridas via JS -->
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between z-10 relative">
+            <!-- Conteúdo Esquerdo -->
+            <div class="max-w-2xl w-full mt-10 lg:mt-0">
+                <div class="inline-block bg-brandGreen/20 border border-brandGreen text-brandGreen px-3 py-1 text-xs font-bold rounded mb-4 uppercase tracking-wider">
+                    <i class="fa-solid fa-calendar-check mr-1"></i> Mais de 30 anos de mercado
+                </div>
+                <img src="https://drive.google.com/uc?export=view&id=1WljwHLoOKgO20ihHvpHI3E72v4WsFFpl" alt="Fáser Car" class="w-64 md:w-80 lg:w-96 object-contain mb-4">
+                <h1 class="sr-only">Fáser Car</h1>
+                <h2 class="text-4xl md:text-6xl font-extrabold uppercase leading-none text-outline mb-6">Funilaria e Pintura</h2>
+
+                <p class="text-gray-300 mb-8 text-base leading-relaxed">
+                    A Fáser Car é o centro automotivo de referência em Piracicaba e região para reparos de colisões e estética. Trabalhamos com <strong>veículos modernos de todas as marcas</strong> (nacionais e importados), entregando funilaria de alto padrão, pintura impecável em estufa e agilidade no processo. Atendemos pessoas físicas, frotas empresariais (PJ) e somos credenciados e parceiros de <strong>todas as seguradoras</strong>.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#localizacao" class="bg-primary text-white text-center px-8 py-4 font-bold text-sm hover:bg-primaryHover transition rounded shadow-lg shadow-primary/30">Fazer Orçamento</a>
+                    <a href="#servicos" class="border-2 border-white text-white text-center px-8 py-4 font-bold text-sm hover:bg-white hover:text-black transition rounded">Nossas Especialidades</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossos Serviços (Especialidades) -->
+    <section id="servicos" class="py-20 bg-darkBg border-b border-zinc-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">Nossas <span class="text-primary">Especialidades</span></h2>
+                    <p class="text-textGray text-sm">Do reparo estrutural de colisões ao brilho de exposição. Cuidamos de cada detalhe do seu veículo.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Serviço 1: Funilaria e Pintura -->
+                <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
+                    <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-car-burst"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Funilaria e Pintura</h3>
+                    <p class="text-sm text-textGray leading-relaxed">
+                        Restauração de colisões, reparos estruturais e repintura em cabine estufa profissional. Acerto de cor exato para manter a originalidade do seu veículo com materiais de alta tecnologia.
+                    </p>
+                </div>
+
+                <!-- Serviço 2: Martelinho de Ouro -->
+                <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
+                    <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Martelinho de Ouro</h3>
+                    <p class="text-sm text-textGray leading-relaxed">
+                        Técnica artesanal para remoção de amassados (chuvas de granizo, portas de estacionamento e pequenos impactos), mantendo 100% da pintura original intacta e valorizando o veículo.
+                    </p>
+                </div>
+
+                <!-- Serviço 3: Polimento Técnico -->
+                <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
+                    <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Polimento Técnico</h3>
+                    <p class="text-sm text-textGray leading-relaxed">
+                        Foco na correção do verniz. Remoção de riscos superficiais, "teias de aranha", hologramas e oxidação. Inclui corte, refino e lustro para restaurar o brilho e espelhamento da pintura.
+                    </p>
+                </div>
+
+                <!-- Serviço 4: Vitrificação -->
+                <div class="bg-darkCard border border-primary rounded-lg p-6 relative shadow-[0_0_15px_rgba(200,16,46,0.1)]">
+                    <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg">PREMIUM</div>
+                    <div class="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Vitrificação</h3>
+                    <p class="text-sm text-textGray leading-relaxed">
+                        Escudo nano-tecnológico de proteção cerâmica sobre o verniz. Repele sujeira, água e protege contra raios UV e micro-riscos. Duração da proteção de até 3 anos, facilitando as lavagens.
+                    </p>
+                </div>
+
+                <!-- Serviço 5: Lavagem Técnica -->
+                <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
+                    <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-soap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Lavagem Completa</h3>
+                    <p class="text-sm text-textGray leading-relaxed">
+                        Lavagem técnica detalhada da carroceria com produtos específicos que não agridem a pintura. Inclui limpeza de caixas de roda, rodas e finalização com ceras de proteção rápida.
+                    </p>
+                </div>
+
+                <!-- Serviço 6: Higienização -->
+                <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
+                    <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-spray-can-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Higienização Interna</h3>
+                    <p class="text-sm text-textGray leading-relaxed">
+                        Limpeza profunda e revitalização do interior do veículo. Remoção de manchas e odores em estofados (tecido ou couro), teto, carpetes, painéis e dutos de ar condicionado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seguradoras -->
+    <section id="seguradoras" class="py-16 bg-[#0a0a0a] border-b border-zinc-900">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <h3 class="text-3xl font-bold mb-4">Trabalhamos com <span class="text-primary">Todas as Seguradoras</span></h3>
+            <p class="text-sm text-textGray leading-relaxed mb-10">
+                Na Fáser Car, o cliente tem livre escolha. Em caso de sinistro, conduzimos todo o processo junto ao corretor e à seguradora, garantindo peças originais e serviços no nosso padrão de excelência de 30 anos, sem que você precise aceitar oficinas credenciadas de qualidade incerta.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-50 grayscale">
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">PORTO SEGURO</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">SULAMÉRICA</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">BRADESCO</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">AZUL SEGUROS</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">MAPFRE</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">HDI</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">TOKIO MARINE</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">+ OUTRAS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section id="galeria" class="py-16 bg-darkBg border-b border-zinc-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-2 text-center">Nossos <span class="text-primary">Trabalhos</span></h2>
+        <p class="text-textGray text-sm text-center mb-10">Confira o nível de detalhamento e acabamento entregue aos nossos clientes.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Imagens ilustrativas (Substituir pelas reais da Fáser) -->
+            <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=600" alt="Trabalho Fáser Car" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+            <img src="https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&q=80&w=600" alt="Trabalho Fáser Car" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600" alt="Trabalho Fáser Car" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+            <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&q=80&w=600" alt="Trabalho Fáser Car" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+            <img src="https://images.unsplash.com/photo-1600661653561-629509216228?auto=format&fit=crop&q=80&w=600" alt="Trabalho Fáser Car" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+            <img src="https://images.unsplash.com/photo-1552857410-60298a4421aa?auto=format&fit=crop&q=80&w=600" alt="Trabalho Fáser Car" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600" alt="Trabalho Fáser Car" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+            <img src="https://images.unsplash.com/photo-1635787627448-18eb9ee48480?auto=format&fit=crop&q=80&w=600" alt="Trabalho Fáser Car" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+        </div>
+    </div>
+</section>
+
+    <!-- Avaliações do Google (Simulação Carrossel) -->
+    <section id="avaliacoes" class="py-16 bg-[#0a0a0a]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center mb-10">
+                <div class="flex items-center gap-3 mb-2">
+                    <i class="fa-brands fa-google text-3xl text-white"></i>
+                    <h3 class="text-3xl font-bold">Avaliações do Google</h3>
+                </div>
+                <p class="text-textGray text-sm">O que nossos clientes dizem sobre o nosso trabalho.</p>
+            </div>
+
+            <div class="relative w-full max-w-6xl mx-auto">
+                <!-- Botões de Navegação do Carrossel -->
+                <button id="prev-review" class="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition border border-gray-300">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="next-review" class="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition border border-gray-300">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- Container do Carrossel -->
+                <div id="reviews-track" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar py-4 px-2">
+
+                    <!-- Comentário 1 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-xl">CM</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Carlos Mendes</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 2 meses</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Levo os carros da minha empresa na Fáser Car há anos. A funilaria é impecável, entregam no prazo combinado e o processo junto a seguradora é feito sem dor de cabeça nenhuma."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 2 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center font-bold text-white text-xl">RS</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Roberto Silva</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 3 meses</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Atendimento excelente. Fizeram a vitrificação no meu carro e o brilho ficou um absurdo, facilita muito para lavar depois. Oficina super limpa e organizada, recomendo a todos em Piracicaba."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 3 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center font-bold text-white text-xl">MF</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Mariana Freitas</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 5 meses</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Tive um sinistro e deixei o carro lá pelo seguro. O martelinho de ouro e a pintura deixaram o carro novo de novo, nem parece que foi batido. Cumpriram o prazo certinho."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 4 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center font-bold text-white text-xl">FC</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Fernando Costa</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 6 meses</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Fiz a pintura do meu para-choque e a cor ficou exata. Ninguém diz que foi repintado. Atendimento nota 10 e entregaram antes do prazo previsto!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 5 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center font-bold text-white text-xl">JA</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Juliana Alves</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 8 meses</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Levei meu carro para higienização interna e lavagem completa. O carro saiu parecendo zero quilômetro. O cheiro de novo é incrível, capricharam demais nos bancos!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 6 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-teal-600 flex items-center justify-center font-bold text-white text-xl">RG</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Ricardo Gomes</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 10 meses</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Melhor oficina de Piracicaba. Resolvi um amassado chato na porta com o martelinho de ouro e ficou perfeito, nem precisou pintar. Profissionais extremamente competentes."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 7 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center font-bold text-white text-xl">LM</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Lucas Martins</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 1 ano</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Serviço de funilaria perfeito. Meu carro sofreu uma batida na traseira e a Fáser Car devolveu como se tivesse saído da concessionária. Parabéns à equipe."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 8 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center font-bold text-white text-xl">AP</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Ana Paula</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 1 ano</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Fiz o polimento técnico e vitrificação. O carro ficou um espelho! Recomendo muito o trabalho do Arnaldo e de toda a equipe."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 9 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center font-bold text-white text-xl">GP</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Gabriel Pereira</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 1 ano</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Oficina de extrema confiança. Preço justo e qualidade impecável. A pintura não tem nenhuma diferença de tom e a textura ficou original."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 10 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center font-bold text-white text-xl">TR</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Thiago Ribeiro</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 1 ano</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Levei pela seguradora Porto Seguro. Processo super rápido, não precisei me preocupar com absolutamente nada. Entregaram no prazo estipulado."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 11 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-red-400 flex items-center justify-center font-bold text-white text-xl">CS</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Camila Santos</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 2 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Excelente atendimento! Fizeram a higienização interna e tiraram manchas do banco que eu achava que seriam impossíveis de sair."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 12 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center font-bold text-white text-xl">VN</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Vitor Nunes</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 2 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "O martelinho de ouro deles é fantástico. Tiraram os amassados de chuva de granizo sem precisar repintar o teto inteiro."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 13 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center font-bold text-white text-xl">ML</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marcos Lima</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 2 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Trabalho muito profissional. A estufa deles garante que a pintura fique sem poeira ou imperfeições. É realmente um serviço premium."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 14 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-pink-600 flex items-center justify-center font-bold text-white text-xl">DP</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Daniela Pinto</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 3 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Sempre levo os carros da frota da nossa empresa lá. Agilidade e transparência no orçamento. Nunca decepcionam, indico de olhos fechados."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Comentário 15 -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-cyan-600 flex items-center justify-center font-bold text-white text-xl">RA</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Rafael Almeida</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 3 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
+                                "Fui por indicação e não me arrependi. Atendimento direto e sincero. Meu capô estava queimado de sol e agora está parecendo carro novo na loja."
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <!-- Substitua o link pelo link do Google Maps da sua empresa -->
+                <a href="https://www.google.com/maps" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition shadow-lg">
+                    Ver todas as avaliações no Google <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localização e Contato -->
+    <section id="localizacao" class="py-16 bg-darkBg border-t border-primary/20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-10">
+                <h2 class="text-3xl font-bold mb-4">Venha Fazer Seu <span class="text-primary">Orçamento</span></h2>
+
+                <!-- Alerta Importante -->
+                <div class="bg-primary/10 border border-primary text-red-100 p-4 rounded-lg inline-block text-sm font-medium mb-8">
+                    <i class="fa-solid fa-triangle-exclamation text-primary mr-2"></i>
+                    <strong>Atenção:</strong> Não realizamos orçamentos via foto. Para garantir a precisão e honestidade dos valores, a avaliação deve ser feita presencialmente. Ligue ou mande mensagem para mais informações!
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row bg-darkCard border border-zinc-800 rounded-xl overflow-hidden shadow-2xl">
+                <!-- Info e Rotas (Layout Grid Bonito) -->
+                <div class="lg:w-1/2 p-8 flex flex-col justify-between bg-[#111]">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-white border-b border-zinc-800 pb-4">Onde Estamos</h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <!-- Box Endereço -->
+                            <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
+                                <strong class="block text-white text-lg mb-1">Endereço</strong>
+                                <div class="flex items-start gap-3 text-textGray text-base md:text-lg">
+                                    <i class="fa-solid fa-location-dot text-primary mt-1 text-xl"></i>
+                                    <div>
+                                        <span>Rua Santa Catarina, 1130<br>Água Branca, Piracicaba - SP</span>
+                                        <span class="block text-sm text-zinc-400 mt-1">Próximo à Faculdade Anhanguera</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Box Contatos -->
+                            <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
+                                <strong class="block text-white text-lg mb-1">Contatos</strong>
+                                <div class="flex items-center gap-3 text-textGray text-base md:text-lg font-medium mt-2">
+                                    <i class="fa-brands fa-whatsapp text-brandGreen text-2xl"></i>
+                                    <i class="fa-solid fa-mobile-screen text-textGray text-xl"></i>
+                                    <a href="tel:+5519996159600" class="hover:text-white transition">(19) 99615-9600</a>
+                                </div>
+                                <div class="flex items-center gap-3 text-textGray text-base md:text-lg font-medium mt-4">
+                                    <i class="fa-solid fa-phone text-primary text-xl"></i>
+                                    <a href="tel:+551934113939" class="ml-1 hover:text-white transition">(19) 3411-3939</a>
+                                </div>
+                            </div>
+
+                            <!-- Box Horários -->
+                            <div class="flex flex-col justify-center gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800 md:col-span-2">
+                                <strong class="block text-white text-lg mb-2 flex items-center gap-2">
+                                    <i class="fa-regular fa-clock text-primary text-xl"></i> Horário de Funcionamento
+                                </strong>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 text-base text-textGray">
+                                    <div>
+                                        <span class="block text-white font-semibold mb-1 text-lg">Segunda a Quinta:</span>
+                                        <span>07:30 às 18:00</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-white font-semibold mb-1 text-lg">Sexta-feira:</span>
+                                        <span>07:30 às 17:00</span>
+                                    </div>
+                                    <div class="sm:col-span-2 mt-3 pt-3 border-t border-zinc-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                                        <span class="text-brandGreen font-semibold flex items-center gap-2 text-base md:text-lg">
+                                            <i class="fa-solid fa-utensils text-lg"></i> Almoço: 11:30 às 13:00
+                                        </span>
+                                        <span class="text-primary font-bold text-lg">Sáb e Dom: Fechado</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botões de Rota -->
+                    <div class="space-y-3">
+                        <strong class="block text-sm text-zinc-400 mb-2">Traçar Rota Automaticamente:</strong>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <a href="https://waze.com/ul?q=Rua+Santa+Catarina+1130+Piracicaba&navigate=yes" target="_blank" class="w-full bg-[#33ccff] hover:bg-[#0099cc] text-black font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition">
+                                <i class="fa-brands fa-waze text-lg"></i> Waze
+                            </a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Santa+Catarina+1130+Piracicaba" target="_blank" class="w-full bg-white hover:bg-gray-200 text-black font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition">
+                                <i class="fa-solid fa-map-location-dot text-lg"></i> Google Maps
+                            </a>
+                        </div>
+                        <a href="https://m.uber.com/ul/?client_id=FREE&action=setPickup&pickup=my_location&dropoff[formatted_address]=Rua%20Santa%20Catarina%2C%201130%20-%20Piracicaba" target="_blank" class="w-full bg-zinc-800 hover:bg-black text-white font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition border border-zinc-700">
+                            <i class="fa-brands fa-uber text-lg"></i> Ir de Uber
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Iframe (Ajustado para ocupar o bloco inteiro ao lado) -->
+                <div class="lg:w-1/2 min-h-[400px] lg:min-h-full flex">
+                    <iframe
+                        src="https://maps.google.com/maps?q=F%C3%A1ser%20Car%20Funilaria%20e%20Pintura%20Rua%20Santa%20Catarina%201130%20Piracicaba&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        class="w-full h-full min-h-[400px] grayscale hover:grayscale-0 transition duration-500 flex-grow"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Redes Sociais -->
+            <div class="mt-16 text-center">
+                <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Nossas Redes Sociais</h3>
+                <div class="flex justify-center items-center gap-8">
+                    <a href="https://wa.me/5519996159600" target="_blank" class="text-zinc-400 hover:text-brandGreen transition transform hover:scale-110" title="WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-4xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fasercarpiracicaba/" target="_blank" class="text-zinc-400 hover:text-white transition transform hover:scale-110" title="Instagram">
+                        <i class="fa-brands fa-instagram text-4xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-400 hover:text-blue-600 transition transform hover:scale-110" title="Facebook">
+                        <i class="fa-brands fa-facebook text-4xl"></i>
+                    </a>
+                    <!-- Provisoriamente usando o link do Facebook no TikTok conforme solicitado -->
+                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-400 hover:text-white transition transform hover:scale-110" title="TikTok">
+                        <i class="fa-brands fa-tiktok text-4xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé Minimalista com Botão WhatsApp -->
+    <footer class="bg-black py-10 border-t border-zinc-900 relative z-10">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <!-- Logo e Direitos -->
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <img src="https://drive.google.com/uc?export=view&id=1WljwHLoOKgO20ihHvpHI3E72v4WsFFpl" alt="Fáser Car Logo" class="h-10 object-contain mb-3 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
+                <p class="text-xs text-zinc-500">© 2026 Fáser Car. Todos os direitos reservados.</p>
+                <p class="text-xs text-zinc-600 mt-1">Desenvolvido para alta performance por <strong>Arnaldo Amaro</strong>.</p>
+            </div>
+
+            <!-- Contatos no Rodapé explicitando os números e o Botão direto -->
+            <div class="flex flex-col items-center md:items-end gap-3 text-sm text-zinc-400 w-full md:w-auto mt-4 md:mt-0">
+
+                <!-- Telefone Fixo -->
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-1 sm:gap-2 w-full">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-primary"></i>
+                        <strong class="whitespace-nowrap">Telefone Fixo:</strong>
+                    </div>
+                    <span class="whitespace-nowrap">(19) 3411-3939</span>
+                </div>
+
+                <!-- Celular / WhatsApp -->
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-1 sm:gap-2 w-full">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-mobile-screen text-brandGreen"></i>
+                        <strong class="whitespace-nowrap">Celular / WhatsApp:</strong>
+                    </div>
+                    <span class="whitespace-nowrap">(19) 99615-9600</span>
+                </div>
+
+                <a href="https://wa.me/5519996159600" target="_blank" class="mt-2 bg-brandGreen text-black font-bold px-5 py-2 rounded flex items-center justify-center gap-2 hover:bg-green-500 transition shadow-lg whitespace-nowrap">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Chamar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante: Voltar ao Topo -->
+    <a href="#home" id="backToTop" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50 hover:bg-primaryHover text-lg">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- Lightbox da Galeria -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden flex justify-center items-center opacity-0 transition-opacity duration-300 cursor-zoom-out">
+        <span class="absolute top-6 right-8 text-white text-4xl font-bold hover:text-primary transition cursor-pointer">&times;</span>
+        <img id="lightbox-img" src="" alt="Imagem Ampliada" class="max-w-[95%] max-h-[90%] object-contain rounded shadow-2xl transform scale-95 transition-transform duration-300">
+    </div>
+
+    <!-- Scripts da Página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- MENU MOBILE ---
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                menu.classList.toggle('flex');
+            });
+
+            // Fecha o menu mobile ao clicar em um link
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                });
+            });
+
+            // --- CARROSSEL DE FUNDO ---
+            const bgContainer = document.getElementById('hero-bg-container');
+            const images = [
+                'https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&q=80&w=1920',
+                'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=1920',
+                'https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&q=80&w=1920',
+                'https://images.unsplash.com/photo-1635787627448-18eb9ee48480?auto=format&fit=crop&q=80&w=1920'
+            ];
+
+            images.forEach((imgUrl, index) => {
+                const div = document.createElement('div');
+                div.className = `carousel-slide ${index === 0 ? 'active' : ''}`;
+                div.style.backgroundImage = `url('${imgUrl}')`;
+                bgContainer.appendChild(div);
+            });
+
+            const slides = document.querySelectorAll('.carousel-slide');
+            let currentIndex = 0;
+
+            if(slides.length > 1) {
+                setInterval(() => {
+                    slides[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    slides[currentIndex].classList.add('active');
+                }, 5000);
+            }
+
+            // --- BOTÃO VOLTAR AO TOPO E LOGO DINÂMICA ---
+            const backToTopBtn = document.getElementById('backToTop');
+            const logoSmall = document.getElementById('logo-small');
+            const logoFull = document.getElementById('logo-full');
+
+            // Referências aos itens do menu
+            const navSobre = document.getElementById('nav-sobre');
+            const navContato = document.getElementById('nav-contato');
+            const mobileNavSobre = document.getElementById('mobile-nav-sobre');
+            const mobileNavContato = document.getElementById('mobile-nav-contato');
+
+            // Referência à seção de localização
+            const sectionLocalizacao = document.getElementById('localizacao');
+
+            window.addEventListener('scroll', () => {
+                // Controle do Botão Voltar ao Topo
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                }
+
+                // Controle da Logo Dinâmica no Cabeçalho
+                if (window.scrollY > 50) {
+                    logoSmall.classList.add('hidden');
+                    logoFull.classList.remove('hidden');
+
+                    // Mostra o "Sobre" no menu ao sair do topo
+                    if(navSobre) navSobre.classList.remove('hidden');
+                    if(mobileNavSobre) mobileNavSobre.classList.remove('hidden');
+                } else {
+                    logoSmall.classList.remove('hidden');
+                    logoFull.classList.add('hidden');
+
+                    // Esconde o "Sobre" no menu quando está no topo
+                    if(navSobre) navSobre.classList.add('hidden');
+                    if(mobileNavSobre) mobileNavSobre.classList.add('hidden');
+                }
+
+                // Oculta "Orçamento / Mapa" do menu quando a seção de orçamento aparece na tela
+                if (sectionLocalizacao) {
+                    const rect = sectionLocalizacao.getBoundingClientRect();
+                    // Se o topo da seção estiver na tela (subtraindo 150px de margem visual)
+                    if (rect.top <= window.innerHeight - 150) {
+                        if(navContato) navContato.classList.add('hidden');
+                        if(mobileNavContato) mobileNavContato.classList.add('hidden');
+                    } else {
+                        if(navContato) navContato.classList.remove('hidden');
+                        if(mobileNavContato) mobileNavContato.classList.remove('hidden');
+                    }
+                }
+            });
+
+            // Dispara o evento de scroll uma vez ao carregar para garantir o estado inicial correto
+            window.dispatchEvent(new Event('scroll'));
+
+            // --- LIGHTBOX DA GALERIA ---
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const galleryImages = document.querySelectorAll('.gallery-img');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    // Ao clicar, passa a imagem para a caixa flutuante
+                    lightboxImg.src = img.src;
+                    lightbox.classList.remove('hidden');
+
+                    // Pequeno atraso para a transição suave de opacidade funcionar
+                    setTimeout(() => {
+                        lightbox.classList.remove('opacity-0');
+                        lightboxImg.classList.remove('scale-95');
+                        lightboxImg.classList.add('scale-100');
+                    }, 10);
+                });
+            });
+
+            // Fechar ao clicar em qualquer lugar da caixa flutuante
+            lightbox.addEventListener('click', () => {
+                lightbox.classList.add('opacity-0');
+                lightboxImg.classList.remove('scale-100');
+                lightboxImg.classList.add('scale-95');
+
+                // Aguarda o fim da transição para esconder o elemento
+                setTimeout(() => {
+                    lightbox.classList.add('hidden');
+                }, 300);
+            });
+
+            // --- CARROSSEL DE AVALIAÇÕES ---
+            const reviewsTrack = document.getElementById('reviews-track');
+            const prevReviewBtn = document.getElementById('prev-review');
+            const nextReviewBtn = document.getElementById('next-review');
+
+            if(reviewsTrack && prevReviewBtn && nextReviewBtn) {
+                // Valor de rolagem aproxima a largura de um card + gap
+                const scrollAmount = 350;
+                let autoScrollInterval;
+
+                const startAutoScroll = () => {
+                    autoScrollInterval = setInterval(() => {
+                        // Verifica se chegou ao final do carrossel (com uma margem de segurança de 10px)
+                        if (reviewsTrack.scrollLeft + reviewsTrack.clientWidth >= reviewsTrack.scrollWidth - 10) {
+                            // Volta para o início
+                            reviewsTrack.scrollTo({ left: 0, behavior: 'smooth' });
+                        } else {
+                            // Avança um card
+                            reviewsTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                        }
+                    }, 3500); // Rola a cada 3.5 segundos
+                };
+
+                const stopAutoScroll = () => {
+                    clearInterval(autoScrollInterval);
+                };
+
+                prevReviewBtn.addEventListener('click', () => {
+                    reviewsTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                    stopAutoScroll();
+                    startAutoScroll(); // Reseta o timer ao clicar
+                });
+
+                nextReviewBtn.addEventListener('click', () => {
+                    if (reviewsTrack.scrollLeft + reviewsTrack.clientWidth >= reviewsTrack.scrollWidth - 10) {
+                        reviewsTrack.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        reviewsTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    }
+                    stopAutoScroll();
+                    startAutoScroll(); // Reseta o timer ao clicar
+                });
+
+                // Pausa a rolagem se o usuário colocar o mouse em cima (ou tocar no celular)
+                reviewsTrack.addEventListener('mouseenter', stopAutoScroll);
+                reviewsTrack.addEventListener('mouseleave', startAutoScroll);
+                reviewsTrack.addEventListener('touchstart', stopAutoScroll, {passive: true});
+                reviewsTrack.addEventListener('touchend', startAutoScroll, {passive: true});
+
+                // Inicia a rolagem automática
+                startAutoScroll();
+            }
+
+            // --- PROTEÇÃO DO CÓDIGO FONTE ---
+            // Bloqueia clique direito (menu de contexto)
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+
+            // Bloqueia atalhos de teclado comuns para inspeção de código (F12, Ctrl+U, Ctrl+Shift+I/J/C)
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F12' ||
+                   (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) ||
+                   (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c')) ||
+                   (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) ||
+                   (e.ctrlKey && (e.key === 'U' || e.key === 'u'))) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
