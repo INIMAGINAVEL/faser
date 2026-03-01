@@ -84,7 +84,6 @@
         ::-webkit-scrollbar-thumb { background: #333; }
         ::-webkit-scrollbar-thumb:hover { background: #C8102E; }
         
-        /*  CSS extra obrigatório */
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -111,39 +110,30 @@
                 <a href="#seguradoras" class="nav-item hover:text-primary transition">Seguradoras</a>
                 <a href="#galeria" class="nav-item hover:text-primary transition">Galeria</a>
                 <a href="#localizacao" id="nav-contato" class="nav-item hover:text-primary transition">Mapa</a>
-                
-                <!-- Indicador de Menu Dinâmico (Linha com pontas afiadas) -->
                 <div id="nav-indicator" class="absolute -bottom-[18px] h-[2px] bg-primary transition-all duration-300 opacity-0 pointer-events-none rounded-none" style="width: 0; left: 0;"></div>
             </nav>
 
-            <!-- Contato e Botão (Desktop) -->
+            <!-- Contato e Botão -->
             <div class="hidden lg:flex items-center gap-6">
                 <div class="flex items-center gap-4 border-r border-zinc-700 pr-6">
-                    
-                    <!-- Box Telefone Fixo -->
                     <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded border border-zinc-800">
                         <i class="fa-solid fa-phone text-primary text-2xl"></i>
                         <div class="flex flex-col text-left">
-                            <span class="text-[10px] text-gray-400 uppercase tracking-wider font-bold leading-none mb-1">Telefone Fixo</span>
-                            <a href="tel:+551934113939" class="text-base font-bold text-white hover:text-primary transition leading-none">(19) 3411-3939</a>
+                            <span class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Telefone Fixo</span>
+                            <a href="tel:+551934113939" class="text-lg font-bold text-white hover:text-primary transition">(19) 3411-3939</a>
                         </div>
                     </div>
-
-                    <!-- Box Celular / WhatsApp -->
                     <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded border border-zinc-800">
                         <i class="fa-brands fa-whatsapp text-brandGreen text-2xl"></i>
                         <div class="flex flex-col text-left">
-                            <span class="text-[10px] text-brandGreen uppercase tracking-wider font-bold leading-none mb-1">WhatsApp</span>
-                            <a href="https://wa.me/5519996159600" target="_blank" class="text-base font-bold text-white hover:text-brandGreen transition leading-none">(19) 99615-9600</a>
+                            <span class="text-[10px] text-brandGreen uppercase tracking-wider font-bold">Celular / WhatsApp</span>
+                            <a href="https://wa.me/5519996159600" target="_blank" class="text-lg font-bold text-white hover:text-brandGreen transition">(19) 99615-9600</a>
                         </div>
                     </div>
-                    
                 </div>
-                <!-- Botão dinâmico: começa invisível -->
-                <a href="#localizacao" id="header-orcamento-btn" class="bg-primary text-white px-6 py-2.5 font-bold text-base hover:bg-primaryHover transition-all duration-500 rounded opacity-0 pointer-events-none translate-x-2 shadow-lg shadow-primary/20">Fazer Orçamento</a>
+                <a href="#localizacao" id="header-orcamento-btn" class="bg-primary text-white px-6 py-2.5 font-bold text-base hover:bg-primaryHover transition-all duration-500 rounded opacity-0 pointer-events-none translate-x-2">Fazer Orçamento</a>
             </div>
             
-            <!-- Botão Menu Mobile -->
             <div class="lg:hidden flex items-center gap-5">
                 <a href="tel:+551934113939" class="text-white text-2xl hover:text-primary transition" title="Ligar Fixo"><i class="fa-solid fa-phone"></i></a>
                 <a href="https://wa.me/5519996159600" target="_blank" class="text-brandGreen text-3xl hover:text-green-400 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -151,7 +141,6 @@
             </div>
         </div>
 
-        <!-- Menu Mobile (Dropdown) -->
         <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black/95 border-b border-zinc-800 flex-col py-4 px-6 z-10 shadow-2xl transition-all">
             <a href="#home" id="mobile-nav-sobre" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50 hidden">Sobre</a>
             <a href="#servicos" class="mobile-link text-white font-semibold py-3 border-b border-zinc-800/50">Especialidades</a>
@@ -166,27 +155,22 @@
         </nav>
     </header>
 
-    <!-- Seção Hero com Carrossel -->
+    <!-- Seção Hero -->
     <section id="home" class="min-h-screen flex items-center relative pt-20 border-b border-primary/30">
         <div id="hero-bg-container"></div>
         <div class="hero-overlay"></div>
 
         <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between z-10 relative">
-            <!-- Conteúdo Esquerdo -->
             <div class="max-w-2xl w-full mt-10 lg:mt-0">
                 <div class="inline-block bg-brandGreen/20 border border-brandGreen text-brandGreen px-3 py-1 text-xs font-bold rounded mb-4 uppercase tracking-wider">
                     <i class="fa-solid fa-calendar-check mr-1"></i> Mais de 30 anos de mercado
                 </div>
-                
                 <img src="f%C3%A1ser-acento.png" alt="Fáser Car" class="w-full max-w-[380px] md:max-w-[533px] lg:max-w-[650px] object-contain mb-2 md:-mb-4 lg:-mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] brightness-125 contrast-125 saturate-150 relative z-20">
-                
                 <h1 class="sr-only">Fáser Car</h1>
                 <h2 class="text-4xl md:text-6xl font-extrabold uppercase leading-none text-outline mb-6 relative z-10 pt-2 md:pt-0">Funilaria e Pintura</h2>
-                
                 <p class="text-gray-300 mb-8 text-base leading-relaxed">
                     A Fáser Car é o centro automotivo de referência em Piracicaba e região para reparos de colisões e estética. Trabalhamos com <strong>veículos modernos de todas as marcas</strong> (nacionais e importados), entregando funilaria de alto padrão, pintura impecável em estufa e agilidade no processo. Atendemos pessoas físicas, frotas empresariais (PJ) e somos credenciados e parceiros de <strong>todas as seguradoras</strong>.
                 </p>
-                
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#localizacao" class="bg-primary text-white text-center px-8 py-4 font-bold text-sm hover:bg-primaryHover transition rounded shadow-lg shadow-primary/30">Fazer Orçamento</a>
                     <a href="#servicos" class="border-2 border-white text-white text-center px-8 py-4 font-bold text-sm hover:bg-white hover:text-black transition rounded">Nossas Especialidades</a>
@@ -195,7 +179,7 @@
         </div>
     </section>
 
-    <!-- Nossos Serviços (Especialidades) -->
+    <!-- Nossos Serviços -->
     <section id="servicos" class="py-20 bg-darkBg border-b border-zinc-900">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
@@ -233,14 +217,14 @@
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Vitrificação</h3>
-                    <p class="text-sm text-textGray leading-relaxed mb-4">Escudo nano-tecnológico de proteção cerâmica. Repele sujeira e protege contra raios UV.</p>
+                    <p class="text-sm text-textGray leading-relaxed mb-4">Escudo nano-tecnológico de proteção cerâmica sobre o verniz. Repele sujeira e água.</p>
                 </div>
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-soap"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Lavagem Completa</h3>
-                    <p class="text-sm text-textGray leading-relaxed">Lavagem técnica detalhada da carroceria com produtos que não agridem a pintura.</p>
+                    <p class="text-sm text-textGray leading-relaxed">Lavagem técnica detalhada da carroceria com produtos específicos que não agridem a pintura.</p>
                 </div>
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
@@ -300,7 +284,6 @@
                 <p class="text-textGray text-sm">Depoimentos reais de quem confia no nosso trabalho.</p>
             </div>
             
-            <!-- Centralização perfeita no mobile -->
             <div class="relative max-w-9xl mx-auto px-0 md:px-12">
                 <button id="prev-review" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-12 h-12 rounded-full items-center justify-center transition border border-gray-300">
                     <i class="fa-solid fa-chevron-left"></i>
@@ -309,7 +292,6 @@
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
 
-                <!--  Container do carrossel (versão otimizada) -->
                 <div id="reviews-track" class="flex gap-6 overflow-x-auto snap-x snap-proximity scroll-smooth hide-scrollbar py-6 px-4 scroll-pl-4 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] overscroll-x-contain">
                     
                     <!-- Gian paulo Carrasco -->
@@ -400,7 +382,7 @@
                         </div>
                     </div>
 
-                    <!-- Angel Violet Evergarden -->
+                    <!-- Angel Violet -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
                             <div class="flex gap-4 items-center mb-4">
@@ -419,94 +401,6 @@
                                 <div><h4 class="font-bold text-gray-900 text-sm">Diogo Rubia</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
                             <p class="text-xs text-gray-700 leading-relaxed italic">"Top demais melhor serviço da região 🙏1"</p>
-                        </div>
-                    </div>
-
-                    <!-- Marli Nolasco -->
-                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
-                        <div>
-                            <div class="flex gap-4 items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-orange-400 flex items-center justify-center font-bold text-white">MN</div>
-                                <div><h4 class="font-bold text-gray-900 text-sm">Marli Nolasco</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                            </div>
-                            <p class="text-xs text-gray-700 leading-relaxed italic">"Excelente trabalho! Entrega antes do prazo! Eficiência na execução do serviço!"</p>
-                        </div>
-                    </div>
-
-                    <!-- Paulino Akira Shimabukuro -->
-                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
-                        <div>
-                            <div class="flex gap-4 items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center font-bold text-white">PS</div>
-                                <div><h4 class="font-bold text-gray-900 text-sm">Paulino Akira</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                            </div>
-                            <p class="text-xs text-gray-700 leading-relaxed italic">"Excelentes profissionais, ótimo atendimento e serviço de primeira."</p>
-                        </div>
-                    </div>
-
-                    <!-- Fabiane da Silva Almeida -->
-                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
-                        <div>
-                            <div class="flex gap-4 items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-red-400 flex items-center justify-center font-bold text-white">FA</div>
-                                <div><h4 class="font-bold text-gray-900 text-sm">Fabiane Almeida</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                            </div>
-                            <p class="text-xs text-gray-700 leading-relaxed italic">"Atendimento e serviço excelente"</p>
-                        </div>
-                    </div>
-
-                    <!-- Mel Crivello -->
-                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
-                        <div>
-                            <div class="flex gap-4 items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-pink-400 flex items-center justify-center font-bold text-white">MC</div>
-                                <div><h4 class="font-bold text-gray-900 text-sm">Mel Crivello</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                            </div>
-                            <p class="text-xs text-gray-700 leading-relaxed italic">"Excelente atendimento e excelente trabalho!!"</p>
-                        </div>
-                    </div>
-
-                    <!-- Jair Citron -->
-                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
-                        <div>
-                            <div class="flex gap-4 items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center font-bold text-white">JC</div>
-                                <div><h4 class="font-bold text-gray-900 text-sm">Jair Citron</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                            </div>
-                            <p class="text-xs text-gray-700 leading-relaxed italic">"Muito bom serviço"</p>
-                        </div>
-                    </div>
-
-                    <!-- Hamilton Alonso Concrevi -->
-                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
-                        <div>
-                            <div class="flex gap-4 items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-green-400 flex items-center justify-center font-bold text-white">HA</div>
-                                <div><h4 class="font-bold text-gray-900 text-sm">Hamilton Alonso</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                            </div>
-                            <p class="text-xs text-gray-700 leading-relaxed italic">"Serviços perfeitos e o Fábio e a Aline são ótimos 🙏1"</p>
-                        </div>
-                    </div>
-
-                    <!-- Marcio Garcia -->
-                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
-                        <div>
-                            <div class="flex gap-4 items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center font-bold text-white">MG</div>
-                                <div><h4 class="font-bold text-gray-900 text-sm">Marcio Garcia</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                            </div>
-                            <p class="text-xs text-gray-700 leading-relaxed italic">"Seu carro sai como novo.... Atendimento então sem palavras...."</p>
-                        </div>
-                    </div>
-
-                    <!-- Saga Som Prudente -->
-                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
-                        <div>
-                            <div class="flex gap-4 items-center mb-4">
-                                <div class="w-12 h-12 rounded-full bg-indigo-400 flex items-center justify-center font-bold text-white">SS</div>
-                                <div><h4 class="font-bold text-gray-900 text-sm">Saga Som Prudente</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                            </div>
-                            <p class="text-xs text-gray-700 leading-relaxed italic">"A melhor oficina de Martelinho de ouro e Funilaria de Piracicaba ❤️1"</p>
                         </div>
                     </div>
 
@@ -537,37 +431,63 @@
                     <div>
                         <h3 class="text-2xl font-bold mb-6 text-white border-b border-zinc-800 pb-4">Onde Estamos</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <!-- Box Endereço -->
                             <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
-                                <strong class="block text-white text-lg mb-1">Endereço</strong>
-                                <div class="flex items-start gap-3 text-textGray text-base md:text-lg">
+                                <strong class="block text-white text-lg mb-1 text-sm uppercase tracking-wider">Endereço</strong>
+                                <div class="flex items-start gap-3 text-textGray text-sm">
                                     <i class="fa-solid fa-location-dot text-primary mt-1 text-xl"></i>
-                                    <div>
-                                        <span>Rua Santa Catarina, 1130<br>Água Branca, Piracicaba - SP</span>
-                                    </div>
+                                    <span>Rua Santa Catarina, 1130<br>Água Branca, Piracicaba - SP</span>
                                 </div>
                             </div>
+                            <!-- Box Contatos -->
                             <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
-                                <strong class="block text-white text-lg mb-1">Contatos</strong>
-                                <div class="flex items-center gap-3 text-textGray text-base md:text-lg font-medium mt-2">
+                                <strong class="block text-white text-lg mb-1 text-sm uppercase tracking-wider">Contatos</strong>
+                                <div class="flex items-center gap-3 text-textGray text-sm font-medium mt-2">
                                     <i class="fa-brands fa-whatsapp text-brandGreen text-2xl"></i>
                                     <a href="https://wa.me/5519996159600" target="_blank" class="hover:text-white transition">(19) 99615-9600</a>
                                 </div>
-                                <div class="flex items-center gap-3 text-textGray text-base md:text-lg font-medium mt-4">
+                                <div class="flex items-center gap-3 text-textGray text-sm font-medium mt-4">
                                     <i class="fa-solid fa-phone text-primary text-xl"></i>
                                     <a href="tel:+551934113939" class="hover:text-white transition">(19) 3411-3939</a>
                                 </div>
                             </div>
+                            <!-- Box Horários Restaurado Completamente -->
+                            <div class="flex flex-col justify-center gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800 md:col-span-2">
+                                <strong class="block text-white mb-2 flex items-center gap-2 text-sm uppercase tracking-wider">
+                                    <i class="fa-regular fa-clock text-primary text-xl"></i> Horário de Funcionamento
+                                </strong>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 text-sm text-textGray">
+                                    <div>
+                                        <span class="block text-white font-semibold mb-1">Segunda a Quinta:</span>
+                                        <span>07:30 às 18:00</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-white font-semibold mb-1">Sexta-feira:</span>
+                                        <span>07:30 às 17:00</span>
+                                    </div>
+                                    <div class="sm:col-span-2 mt-3 pt-3 border-t border-zinc-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                                        <span class="text-brandGreen font-semibold flex items-center gap-2">
+                                            <i class="fa-solid fa-utensils"></i> Almoço: 11:30 às 13:00
+                                        </span>
+                                        <span class="text-primary font-bold">Sáb e Dom: Fechado</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Botões de Rota com Botão UBER Restaurado -->
                     <div class="space-y-3">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <a href="https://waze.com/ul?q=Rua+Santa+Catarina+1130+Piracicaba&navigate=yes" target="_blank" class="w-full bg-[#33ccff] hover:bg-[#0099cc] text-black font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition">
+                            <a href="https://waze.com/ul?q=Rua+Santa+Catarina+1130+Piracicaba&navigate=yes" target="_blank" class="w-full bg-[#33ccff] hover:bg-[#0099cc] text-black font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition text-sm">
                                 <i class="fa-brands fa-waze text-lg"></i> Waze
                             </a>
-                            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Santa+Catarina+1130+Piracicaba" target="_blank" class="w-full bg-white hover:bg-gray-200 text-black font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Santa+Catarina+1130+Piracicaba" target="_blank" class="w-full bg-white hover:bg-gray-200 text-black font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition text-sm">
                                 <i class="fa-solid fa-map-location-dot text-lg"></i> Google Maps
                             </a>
                         </div>
+                        <a href="https://m.uber.com/ul/?client_id=FREE&action=setPickup&pickup=my_location&dropoff[formatted_address]=Rua%20Santa%20Catarina%2C%201130%20-%20Piracicaba" target="_blank" class="w-full bg-zinc-800 hover:bg-black text-white font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition border border-zinc-700 text-sm">
+                            <i class="fa-brands fa-uber text-lg"></i> Chamar Uber (Abrir Rota)
+                        </a>
                     </div>
                 </div>
                 <div class="lg:w-1/2 min-h-[400px]">
@@ -576,12 +496,12 @@
             </div>
             <!-- Redes Sociais -->
             <div class="mt-16 text-center">
-                <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Nossas Redes Sociais</h3>
+                <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Redes Sociais</h3>
                 <div class="flex justify-center items-center gap-12 mt-4">
-                    <a href="https://wa.me/5519996159600" target="_blank" class="text-[#25D366]/80 hover:text-[#25D366] hover:drop-shadow-[0_0_8px_rgba(37,211,102,0.5)] transition-all duration-300 transform hover:scale-110"><i class="fa-brands fa-whatsapp text-4xl"></i></a>
-                    <a href="https://www.instagram.com/fasercarpiracicaba/" target="_blank" class="text-[#E1306C]/80 hover:text-[#E1306C] hover:drop-shadow-[0_0_8px_rgba(225,48,108,0.5)] transition-all duration-300 transform hover:scale-110"><i class="fa-brands fa-instagram text-4xl"></i></a>
-                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-[#1877F2]/80 hover:text-[#1877F2] hover:drop-shadow-[0_0_8px_rgba(24,119,242,0.5)] transition-all duration-300 transform hover:scale-110"><i class="fa-brands fa-facebook text-4xl"></i></a>
-                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-300 hover:text-white transition-all duration-300 transform hover:scale-110"><i class="fa-brands fa-tiktok text-4xl"></i></a>
+                    <a href="https://wa.me/5519996159600" target="_blank" class="text-[#25D366]/80 hover:text-[#25D366] hover:drop-shadow-[0_0_8px_rgba(37,211,102,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-whatsapp text-4xl"></i></a>
+                    <a href="https://www.instagram.com/fasercarpiracicaba/" target="_blank" class="text-[#E1306C]/80 hover:text-[#E1306C] hover:drop-shadow-[0_0_8px_rgba(225,48,108,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-instagram text-4xl"></i></a>
+                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-[#1877F2]/80 hover:text-[#1877F2] hover:drop-shadow-[0_0_8px_rgba(24,119,242,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-facebook text-4xl"></i></a>
+                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-300 hover:text-white transition-all transform hover:scale-110"><i class="fa-brands fa-tiktok text-4xl"></i></a>
                 </div>
             </div>
         </div>
@@ -622,7 +542,6 @@
             const menu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
             const logoLink = document.getElementById('logo-link');
-
             btn.addEventListener('click', () => { menu.classList.toggle('hidden'); menu.classList.toggle('flex'); });
             mobileLinks.forEach(link => { link.addEventListener('click', () => { menu.classList.add('hidden'); menu.classList.remove('flex'); }); });
             if (logoLink) { logoLink.addEventListener('click', () => { menu.classList.add('hidden'); menu.classList.remove('flex'); }); }
@@ -640,7 +559,7 @@
             let currentIndex = 0;
             if(slides.length > 1) { setInterval(() => { slides[currentIndex].classList.remove('active'); currentIndex = (currentIndex + 1) % slides.length; slides[currentIndex].classList.add('active'); }, 5000); }
 
-            // BOTÃO VOLTAR TOPO E INDICADOR
+            // BOTÃO VOLTAR TOPO, MENU E INDICADOR (SCROLLSPY)
             const backToTopBtn = document.getElementById('backToTop');
             const navSobre = document.getElementById('nav-sobre');
             const mobileNavSobre = document.getElementById('mobile-nav-sobre');
@@ -666,28 +585,16 @@
                     orcamentoBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-x-2'); orcamentoBtn.classList.remove('opacity-100', 'translate-x-0');
                 }
                 
-                // Lógica de Deteção de Secção (Scrollspy) Corrigida para o Mapa
                 let currentId = '';
-                sections.forEach(section => { 
-                    if (scrollY >= section.offsetTop - 200) {
-                        currentId = section.getAttribute('id'); 
-                    }
-                });
-
-                // Ajuste para garantir que o "Mapa" seja detetado se chegar ao fundo
+                sections.forEach(section => { if (scrollY >= section.offsetTop - 200) currentId = section.getAttribute('id'); });
                 const isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 150;
-                if (isAtBottom) {
-                    currentId = 'localizacao';
-                }
+                if (isAtBottom) currentId = 'localizacao';
 
                 let activeElem = null;
                 navItems.forEach(item => { 
                     item.classList.remove('text-primary'); 
                     const href = item.getAttribute('href').substring(1); 
-                    if (href === currentId) { 
-                        activeElem = item; 
-                        item.classList.add('text-primary'); 
-                    } 
+                    if (href === currentId) { activeElem = item; item.classList.add('text-primary'); } 
                 });
 
                 if (activeElem && currentId !== 'home') { 
