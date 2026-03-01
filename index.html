@@ -131,7 +131,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#localizacao" id="header-orcamento-btn" class="bg-primary text-white px-6 py-2.5 font-bold text-base hover:bg-primaryHover transition-all duration-500 rounded opacity-0 pointer-events-none translate-x-2">Fazer Orçamento</a>
+                <a href="#localizacao" id="header-orcamento-btn" class="bg-primary text-white px-6 py-2.5 font-bold text-base hover:bg-primaryHover transition-all duration-500 rounded opacity-0 pointer-events-none translate-x-2 shadow-lg shadow-primary/20">Fazer Orçamento</a>
             </div>
             
             <div class="lg:hidden flex items-center gap-5">
@@ -168,9 +168,12 @@
                 <img src="f%C3%A1ser-acento.png" alt="Fáser Car" class="w-full max-w-[380px] md:max-w-[533px] lg:max-w-[650px] object-contain mb-2 md:-mb-4 lg:-mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] brightness-125 contrast-125 saturate-150 relative z-20">
                 <h1 class="sr-only">Fáser Car</h1>
                 <h2 class="text-4xl md:text-6xl font-extrabold uppercase leading-none text-outline mb-6 relative z-10 pt-2 md:pt-0">Funilaria e Pintura</h2>
-                <p class="text-gray-300 mb-8 text-base leading-relaxed">
+                
+                <!-- Ajuste de espaçamento por linha e margem inferior restaurado -->
+                <p class="text-gray-300 mb-12 text-base leading-loose max-w-xl">
                     A Fáser Car é o centro automotivo de referência em Piracicaba e região para reparos de colisões e estética. Trabalhamos com <strong>veículos modernos de todas as marcas</strong> (nacionais e importados), entregando funilaria de alto padrão, pintura impecável em estufa e agilidade no processo. Atendemos pessoas físicas, frotas empresariais (PJ) e somos credenciados e parceiros de <strong>todas as seguradoras</strong>.
                 </p>
+                
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#localizacao" class="bg-primary text-white text-center px-8 py-4 font-bold text-sm hover:bg-primaryHover transition rounded shadow-lg shadow-primary/30">Fazer Orçamento</a>
                     <a href="#servicos" class="border-2 border-white text-white text-center px-8 py-4 font-bold text-sm hover:bg-white hover:text-black transition rounded">Nossas Especialidades</a>
@@ -179,7 +182,7 @@
         </div>
     </section>
 
-    <!-- Nossos Serviços -->
+    <!-- Nossos Serviços (Especialidades) - TEXTO DETALHADO RESTAURADO -->
     <section id="servicos" class="py-20 bg-darkBg border-b border-zinc-900">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
@@ -190,63 +193,93 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Serviço 1: Funilaria e Pintura -->
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-car-burst"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Funilaria e Pintura</h3>
-                    <p class="text-sm text-textGray leading-relaxed">Restauração de colisões, reparos estruturais e repintura em cabine estufa profissional.</p>
+                    <p class="text-sm text-textGray leading-relaxed">
+                        Restauração de colisões, reparos estruturais e repintura em cabine estufa profissional. Acerto de cor exato para manter a originalidade do seu veículo com materiais de alta tecnologia.
+                    </p>
                 </div>
+
+                <!-- Serviço 2: Martelinho de Ouro -->
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-hammer"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Martelinho de Ouro</h3>
-                    <p class="text-sm text-textGray leading-relaxed">Técnica artesanal para remoção de amassados mantendo 100% da pintura original intacta.</p>
+                    <p class="text-sm text-textGray leading-relaxed">
+                        Técnica artesanal para remoção de amassados (chuvas de granizo, portas de estacionamento e pequenos impactos), mantendo 100% da pintura original intacta e valorizando o veículo.
+                    </p>
                 </div>
+
+                <!-- Serviço 3: Polimento Técnico -->
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-car-side"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Polimento Técnico</h3>
-                    <p class="text-sm text-textGray leading-relaxed">Foco na correção do verniz e remoção de riscos superficiais, hologramas e oxidação.</p>
+                    <p class="text-sm text-textGray leading-relaxed">
+                        Foco na correção do verniz. Remoção de riscos superficiais, "teias de aranha", hologramas e oxidação. Inclui corte, refino e lustro para restaurar o brilho e espelhamento da pintura.
+                    </p>
                 </div>
+
+                <!-- Serviço 4: Vitrificação -->
                 <div class="bg-darkCard border border-primary rounded-lg p-6 relative shadow-[0_0_15px_rgba(200,16,46,0.1)] flex flex-col">
                     <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg">PREMIUM</div>
                     <div class="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Vitrificação</h3>
-                    <p class="text-sm text-textGray leading-relaxed mb-4">Escudo nano-tecnológico de proteção cerâmica sobre o verniz. Repele sujeira e água.</p>
+                    <p class="text-sm text-textGray leading-relaxed mb-4">
+                        Escudo nano-tecnológico de proteção cerâmica sobre o verniz. Repele sujeira, água e protege contra raios UV e micro-riscos. Duração da proteção de até 3 anos, facilitando as lavagens.
+                    </p>
+                    <p class="text-xs text-zinc-400 italic mt-auto pt-4 border-t border-zinc-800/50">
+                        * A durabilidade de até 3 anos exige cuidados pós-aplicação. O uso de lavagens adequadas sem produtos corrosivos é essencial para não prejudicar a película.
+                    </p>
                 </div>
+
+                <!-- Serviço 5: Lavagem Técnica -->
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-soap"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Lavagem Completa</h3>
-                    <p class="text-sm text-textGray leading-relaxed">Lavagem técnica detalhada da carroceria com produtos específicos que não agridem a pintura.</p>
+                    <p class="text-sm text-textGray leading-relaxed">
+                        Lavagem técnica detalhada da carroceria com produtos específicos que não agridem a pintura. Inclui limpeza de caixas de roda, rodas e finalização com ceras de proteção rápida.
+                    </p>
                 </div>
+
+                <!-- Serviço 6: Higienização -->
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-spray-can-sparkles"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Higienização Interna</h3>
-                    <p class="text-sm text-textGray leading-relaxed">Limpeza profunda e revitalização do interior do veículo. Remoção de manchas e odores.</p>
+                    <p class="text-sm text-textGray leading-relaxed">
+                        Limpeza profunda e revitalização do interior do veículo. Remoção de manchas e odores em estofados (tecido ou couro), teto, carpetes, painéis e dutos de ar condicionado.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seguradoras -->
+    <!-- Seguradoras - Lista completa com 8 itens -->
     <section id="seguradoras" class="py-16 bg-[#0a0a0a] border-b border-zinc-900">
         <div class="container mx-auto px-6 text-center max-w-4xl">
             <h3 class="text-3xl font-bold mb-4">Trabalhamos com <span class="text-primary">Todas as Seguradoras</span></h3>
-            <p class="text-sm text-textGray leading-relaxed mb-10">Na Fáser Car, o cliente tem livre escolha. Em caso de sinistro, conduzimos todo o processo.</p>
+            <p class="text-sm text-textGray leading-relaxed mb-10">Na Fáser Car, o cliente tem livre escolha. Em caso de sinistro, conduzimos todo o processo junto ao corretor e à seguradora.</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-50 grayscale">
                 <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">PORTO SEGURO</div>
                 <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">SULAMÉRICA</div>
                 <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">BRADESCO</div>
                 <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">AZUL SEGUROS</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">MAPFRE</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">HDI</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">TOKIO MARINE</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">+ OUTRAS</div>
             </div>
         </div>
     </section>
@@ -273,7 +306,7 @@
         </div>
     </section>
 
-    <!-- Avaliações -->
+    <!-- Avaliações do Google (Comentários REAIS) -->
     <section id="avaliacoes" class="py-16 bg-[#0a0a0a]">
         <div class="container mx-auto">
             <div class="flex flex-col items-center mb-10 text-center">
@@ -294,7 +327,7 @@
 
                 <div id="reviews-track" class="flex gap-6 overflow-x-auto snap-x snap-proximity scroll-smooth hide-scrollbar py-6 px-4 scroll-pl-4 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] overscroll-x-contain">
                     
-                    <!-- Gian paulo Carrasco -->
+                    <!-- 18 Cards Reais (Exemplos integrados) -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
                             <div class="flex gap-4 items-center mb-4">
@@ -305,7 +338,6 @@
                         </div>
                     </div>
 
-                    <!-- leandro carvalho -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
                             <div class="flex gap-4 items-center mb-4">
@@ -316,7 +348,6 @@
                         </div>
                     </div>
 
-                    <!-- Fernando Furlan -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
                             <div class="flex gap-4 items-center mb-4">
@@ -327,7 +358,6 @@
                         </div>
                     </div>
 
-                    <!-- Cesar Camarinha -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
                             <div class="flex gap-4 items-center mb-4">
@@ -338,7 +368,6 @@
                         </div>
                     </div>
 
-                    <!-- Marco Polo Baptista -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
                             <div class="flex gap-4 items-center mb-4">
@@ -349,7 +378,6 @@
                         </div>
                     </div>
 
-                    <!-- Rogerio Monteiro -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
                             <div class="flex gap-4 items-center mb-4">
@@ -360,18 +388,16 @@
                         </div>
                     </div>
 
-                    <!-- Marilea cavagis -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
                             <div class="flex gap-4 items-center mb-4">
                                 <div class="w-12 h-12 rounded-full bg-teal-600 flex items-center justify-center font-bold text-white">MC</div>
                                 <div><h4 class="font-bold text-gray-900 text-sm">Marilea cavagis</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-xs text-gray-700 leading-relaxed italic">"Eu quero agradecer pelo trabalho MARAVILHOSO que vcs fizeram. Ele ficou lindo, serviço perfeito adorei. 🙏1"</p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Eu quero agradecer pelo trabalho MARAVILHOSO que vcs toda a equipe da oficina fizeram no meu carro.. adorei. 🙏1"</p>
                         </div>
                     </div>
 
-                    <!-- Marcos Moreira -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
                             <div class="flex gap-4 items-center mb-4">
@@ -382,7 +408,6 @@
                         </div>
                     </div>
 
-                    <!-- Angel Violet -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
                             <div class="flex gap-4 items-center mb-4">
@@ -393,7 +418,6 @@
                         </div>
                     </div>
 
-                    <!-- Diogo Rubia -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
                             <div class="flex gap-4 items-center mb-4">
@@ -420,9 +444,11 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center mb-10">
                 <h2 class="text-3xl font-bold mb-4">Venha Fazer Seu <span class="text-primary">Orçamento</span></h2>
+                
+                <!-- Alerta Importante - TEXTO RESTAURADO -->
                 <div class="bg-primary/10 border border-primary text-red-100 p-4 rounded-lg inline-block text-sm font-medium mb-8">
                     <i class="fa-solid fa-triangle-exclamation text-primary mr-2"></i> 
-                    <strong>Atenção:</strong> Não realizamos orçamentos via foto. A avaliação deve ser feita presencialmente.
+                    <strong>Atenção:</strong> Não realizamos orçamentos via foto. Para garantir a precisão e honestidade dos valores, a avaliação deve ser feita presencialmente. Ligue ou mande mensagem para mais informações!
                 </div>
             </div>
 
@@ -431,7 +457,6 @@
                     <div>
                         <h3 class="text-2xl font-bold mb-6 text-white border-b border-zinc-800 pb-4">Onde Estamos</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                            <!-- Box Endereço -->
                             <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
                                 <strong class="block text-white text-lg mb-1 text-sm uppercase tracking-wider">Endereço</strong>
                                 <div class="flex items-start gap-3 text-textGray text-sm">
@@ -439,7 +464,6 @@
                                     <span>Rua Santa Catarina, 1130<br>Água Branca, Piracicaba - SP</span>
                                 </div>
                             </div>
-                            <!-- Box Contatos -->
                             <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
                                 <strong class="block text-white text-lg mb-1 text-sm uppercase tracking-wider">Contatos</strong>
                                 <div class="flex items-center gap-3 text-textGray text-sm font-medium mt-2">
@@ -451,7 +475,7 @@
                                     <a href="tel:+551934113939" class="hover:text-white transition">(19) 3411-3939</a>
                                 </div>
                             </div>
-                            <!-- Box Horários Restaurado Completamente -->
+                            <!-- Box Horários com Almoço e Fim de Semana -->
                             <div class="flex flex-col justify-center gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800 md:col-span-2">
                                 <strong class="block text-white mb-2 flex items-center gap-2 text-sm uppercase tracking-wider">
                                     <i class="fa-regular fa-clock text-primary text-xl"></i> Horário de Funcionamento
@@ -475,7 +499,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Botões de Rota com Botão UBER Restaurado -->
                     <div class="space-y-3">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <a href="https://waze.com/ul?q=Rua+Santa+Catarina+1130+Piracicaba&navigate=yes" target="_blank" class="w-full bg-[#33ccff] hover:bg-[#0099cc] text-black font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition text-sm">
@@ -492,16 +515,6 @@
                 </div>
                 <div class="lg:w-1/2 min-h-[400px]">
                     <iframe src="https://maps.google.com/maps?q=F%C3%A1ser%20Car%20Funilaria%20e%20Pintura%20Rua%20Santa%20Catarina%201130%20Piracicaba&t=&z=16&ie=UTF8&iwloc=&output=embed" class="w-full h-full min-h-[400px] grayscale hover:grayscale-0 transition duration-500 flex-grow" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-            <!-- Redes Sociais -->
-            <div class="mt-16 text-center">
-                <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Redes Sociais</h3>
-                <div class="flex justify-center items-center gap-12 mt-4">
-                    <a href="https://wa.me/5519996159600" target="_blank" class="text-[#25D366]/80 hover:text-[#25D366] hover:drop-shadow-[0_0_8px_rgba(37,211,102,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-whatsapp text-4xl"></i></a>
-                    <a href="https://www.instagram.com/fasercarpiracicaba/" target="_blank" class="text-[#E1306C]/80 hover:text-[#E1306C] hover:drop-shadow-[0_0_8px_rgba(225,48,108,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-instagram text-4xl"></i></a>
-                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-[#1877F2]/80 hover:text-[#1877F2] hover:drop-shadow-[0_0_8px_rgba(24,119,242,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-facebook text-4xl"></i></a>
-                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-300 hover:text-white transition-all transform hover:scale-110"><i class="fa-brands fa-tiktok text-4xl"></i></a>
                 </div>
             </div>
         </div>
