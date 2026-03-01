@@ -96,7 +96,6 @@
 
             <!-- Navegação (Desktop) -->
             <nav class="hidden lg:flex gap-8 text-sm font-semibold text-white">
-                <!-- O "Sobre" agora usa opacidade em vez de 'hidden' para não empurrar os outros itens -->
                 <a href="#home" id="nav-sobre" class="hover:text-primary transition-all duration-500 opacity-0 pointer-events-none -translate-x-2">Sobre</a>
                 <a href="#servicos" class="hover:text-primary transition">Especialidades</a>
                 <a href="#seguradoras" class="hover:text-primary transition">Seguradoras</a>
@@ -132,7 +131,6 @@
             
             <!-- Botão Menu Mobile -->
             <div class="lg:hidden flex items-center gap-5">
-                <!-- Ícone agora direciona direto para discagem -->
                 <a href="tel:+551934113939" class="text-white text-2xl hover:text-primary transition" title="Ligar Fixo"><i class="fa-solid fa-phone"></i></a>
                 <a href="https://wa.me/5519996159600" target="_blank" class="text-brandGreen text-3xl hover:text-green-400 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <button id="mobile-menu-btn" class="text-white text-3xl focus:outline-none ml-1"><i class="fa-solid fa-bars"></i></button>
@@ -168,7 +166,6 @@
                 <div class="inline-block bg-brandGreen/20 border border-brandGreen text-brandGreen px-3 py-1 text-xs font-bold rounded mb-4 uppercase tracking-wider">
                     <i class="fa-solid fa-calendar-check mr-1"></i> Mais de 30 anos de mercado
                 </div>
-                <!-- Sombra reduzida para 20px de raio e brilho aumentado -->
                 <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/main/f%C3%A1ser-acento.png" alt="Fáser Car" class="w-[429px] md:w-[533px] lg:w-[650px] object-contain -mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] brightness-125 contrast-125 saturate-150">
                 <h1 class="sr-only">Fáser Car</h1>
                 <h2 class="text-4xl md:text-6xl font-extrabold uppercase leading-none text-outline mb-6 relative z-10">Funilaria e Pintura</h2>
@@ -717,7 +714,7 @@
             </div>
 
             <div class="flex flex-col lg:flex-row bg-darkCard border border-zinc-800 rounded-xl overflow-hidden shadow-2xl">
-                <!-- Info e Rotas (Layout Grid Bonito) -->
+                <!-- Info e Rotas -->
                 <div class="lg:w-1/2 p-8 flex flex-col justify-between bg-[#111]">
                     <div>
                         <h3 class="text-2xl font-bold mb-6 text-white border-b border-zinc-800 pb-4">Onde Estamos</h3>
@@ -741,7 +738,7 @@
                                 <div class="flex items-center gap-3 text-textGray text-base md:text-lg font-medium mt-2">
                                     <i class="fa-brands fa-whatsapp text-brandGreen text-2xl"></i>
                                     <i class="fa-solid fa-mobile-screen text-textGray text-xl"></i>
-                                    <a href="tel:+5519996159600" class="hover:text-white transition">(19) 99615-9600</a>
+                                    <a href="https://wa.me/5519996159600" target="_blank" class="hover:text-white transition">(19) 99615-9600</a>
                                 </div>
                                 <div class="flex items-center gap-3 text-textGray text-base md:text-lg font-medium mt-4">
                                     <i class="fa-solid fa-phone text-primary text-xl"></i>
@@ -825,38 +822,32 @@
         </div>
     </section>
 
-    <!-- Rodapé Minimalista com Botão WhatsApp -->
-    <footer class="bg-black py-10 border-t border-zinc-900 relative z-10">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <!-- Logo e Direitos -->
-            <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/main/f%C3%A1ser-acento.png" alt="Fáser Car Logo" class="h-16 mb-4 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] brightness-150 contrast-125 saturate-150">
-                <p class="text-xs text-zinc-500">© 2026 Fáser Car. Todos os direitos reservados.</p>
-                <p class="text-xs text-zinc-600 mt-1">Desenvolvido para alta performance por <strong>Arnaldo Amaro</strong>.</p>
+    <!-- Rodapé Institucional Corporativo -->
+    <footer class="bg-black py-12 border-t border-zinc-900 relative z-10">
+        <div class="container mx-auto px-6">
+            
+            <div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-8 md:gap-12 text-center md:text-left">
+                
+                <!-- Logo Maior -->
+                <div class="flex-shrink-0">
+                    <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/main/f%C3%A1ser-acento.png" alt="Fáser Car Logo" class="h-24 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] brightness-150 contrast-125 saturate-150">
+                </div>
+                
+                <!-- Texto ao lado -->
+                <div class="max-w-xl md:border-l-2 border-zinc-800 md:pl-8">
+                    <p class="text-base md:text-lg text-zinc-400 font-medium leading-relaxed">
+                        Tradição e excelência automotiva. Mais de 30 anos de mercado cuidando de veículos nacionais e importados.
+                    </p>
+                </div>
+                
+            </div>
+
+            <!-- Linha Inferior (Créditos) -->
+            <div class="mt-12 pt-6 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-600">
+                <p>© 2026 Fáser Car. Todos os direitos reservados.</p>
+                <p>Desenvolvido para alta performance por <strong>Arnaldo Amaro</strong>.</p>
             </div>
             
-            <!-- Contatos no Rodapé -->
-            <div class="flex flex-col items-center md:items-end gap-3 text-sm text-zinc-400 w-full md:w-auto mt-4 md:mt-0">
-                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-1 sm:gap-2 w-full">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-phone text-primary"></i> 
-                        <strong class="whitespace-nowrap">Telefone Fixo:</strong>
-                    </div>
-                    <span class="whitespace-nowrap">(19) 3411-3939</span>
-                </div>
-                
-                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-1 sm:gap-2 w-full">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-mobile-screen text-brandGreen"></i> 
-                        <strong class="whitespace-nowrap">Celular / WhatsApp:</strong>
-                    </div>
-                    <span class="whitespace-nowrap">(19) 99615-9600</span>
-                </div>
-                
-                <a href="https://wa.me/5519996159600" target="_blank" class="mt-2 bg-brandGreen text-black font-bold px-5 py-2 rounded flex items-center justify-center gap-2 hover:bg-green-500 transition shadow-lg whitespace-nowrap">
-                    <i class="fa-brands fa-whatsapp text-xl"></i> Chamar no WhatsApp
-                </a>
-            </div>
         </div>
     </footer>
 
