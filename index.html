@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fáser Car - Funilaria, Pintura e Estética Automotiva</title>
     
-    <!-- Favicon atualizado para .png -->
+    <!-- Favicon -->
     <link rel="icon" href="https://raw.githubusercontent.com/INIMAGINAVEL/faser/main/F.png" type="image/png">
     
     <!-- Tailwind CSS -->
@@ -31,9 +31,9 @@
                         textGray: '#a1a1aa'
                     },
                     fontSize: {
-                        'xs': '0.85rem',   /* Aumentado proporcionalmente */
-                        'sm': '1.05rem',   /* Aumentado proporcionalmente */
-                        'base': '1.15rem', /* Aumentado proporcionalmente */
+                        'xs': '0.85rem',   
+                        'sm': '1.05rem',   
+                        'base': '1.15rem', 
                     }
                 }
             }
@@ -42,7 +42,6 @@
     <style>
         html {
             scroll-behavior: smooth;
-            /* Compensação para o cabeçalho fixo não cobrir os títulos ao clicar no menu */
             scroll-padding-top: 80px; 
         }
         body {
@@ -53,7 +52,6 @@
             color: transparent;
             -webkit-text-stroke: 1px #ffffff;
         }
-        /* Configuração do Carrossel */
         #hero-bg-container {
             position: absolute;
             inset: 0;
@@ -78,13 +76,10 @@
             background: linear-gradient(to right, rgba(13, 13, 13, 0.98) 35%, rgba(13, 13, 13, 0.6));
             z-index: 1;
         }
-        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0d0d0d; }
         ::-webkit-scrollbar-thumb { background: #333; }
         ::-webkit-scrollbar-thumb:hover { background: #C8102E; }
-
-        /* Ocultar scrollbar do carrossel mantendo o scroll funcional */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -94,14 +89,15 @@
     <!-- Cabeçalho (Header) FIXO -->
     <header class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 transition-all">
         <div class="px-6 py-4 flex justify-between items-center relative z-20 container mx-auto">
-            <!-- Logo Fixa (.png) -->
+            <!-- Logo Fixa -->
             <a href="#home" class="flex items-center gap-2 h-12">
-                <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/main/F.png" alt="F Icon" class="h-10 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] brightness-150 contrast-125 saturate-150 transition-all">
+                <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/main/F.png" alt="F Icon" class="h-10 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] brightness-125 contrast-125 saturate-150 transition-all">
             </a>
 
             <!-- Navegação (Desktop) -->
             <nav class="hidden lg:flex gap-8 text-sm font-semibold text-white">
-                <a href="#home" id="nav-sobre" class="hover:text-primary transition hidden">Sobre</a>
+                <!-- O "Sobre" agora usa opacidade em vez de 'hidden' para não empurrar os outros itens -->
+                <a href="#home" id="nav-sobre" class="hover:text-primary transition-all duration-500 opacity-0 pointer-events-none -translate-x-2">Sobre</a>
                 <a href="#servicos" class="hover:text-primary transition">Especialidades</a>
                 <a href="#seguradoras" class="hover:text-primary transition">Seguradoras</a>
                 <a href="#galeria" class="hover:text-primary transition">Galeria</a>
@@ -110,25 +106,34 @@
 
             <!-- Contato e Botão (Desktop) -->
             <div class="hidden lg:flex items-center gap-6">
-                <div class="flex items-center gap-5 border-r border-zinc-700 pr-6">
-                    <div class="flex flex-col text-right">
-                        <span class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold">Telefone Fixo</span>
-                        <a href="tel:+551934113939" class="text-lg font-bold text-white hover:text-primary transition">(19) 3411-3939</a>
+                <div class="flex items-center gap-4 border-r border-zinc-700 pr-6">
+                    
+                    <!-- Box Telefone Fixo -->
+                    <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded border border-zinc-800">
+                        <i class="fa-solid fa-phone text-primary text-2xl"></i>
+                        <div class="flex flex-col text-left">
+                            <span class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Telefone Fixo</span>
+                            <a href="tel:+551934113939" class="text-lg font-bold text-white hover:text-primary transition">(19) 3411-3939</a>
+                        </div>
                     </div>
+
+                    <!-- Box Celular / WhatsApp -->
                     <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded border border-zinc-800">
                         <i class="fa-brands fa-whatsapp text-brandGreen text-2xl"></i>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col text-left">
                             <span class="text-[10px] text-brandGreen uppercase tracking-wider font-bold">Celular / WhatsApp</span>
                             <a href="https://wa.me/5519996159600" target="_blank" class="text-lg font-bold text-white hover:text-brandGreen transition">(19) 99615-9600</a>
                         </div>
                     </div>
+                    
                 </div>
                 <a href="#localizacao" class="bg-primary text-white px-6 py-2.5 font-bold text-base hover:bg-primaryHover transition rounded">Fazer Orçamento</a>
             </div>
             
             <!-- Botão Menu Mobile -->
             <div class="lg:hidden flex items-center gap-5">
-                <a href="#localizacao" class="text-white text-2xl hover:text-primary transition" title="Contatos"><i class="fa-solid fa-phone"></i></a>
+                <!-- Ícone agora direciona direto para discagem -->
+                <a href="tel:+551934113939" class="text-white text-2xl hover:text-primary transition" title="Ligar Fixo"><i class="fa-solid fa-phone"></i></a>
                 <a href="https://wa.me/5519996159600" target="_blank" class="text-brandGreen text-3xl hover:text-green-400 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <button id="mobile-menu-btn" class="text-white text-3xl focus:outline-none ml-1"><i class="fa-solid fa-bars"></i></button>
             </div>
@@ -163,8 +168,8 @@
                 <div class="inline-block bg-brandGreen/20 border border-brandGreen text-brandGreen px-3 py-1 text-xs font-bold rounded mb-4 uppercase tracking-wider">
                     <i class="fa-solid fa-calendar-check mr-1"></i> Mais de 30 anos de mercado
                 </div>
-                <!-- Logo Hero atualizado para .png -->
-                <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/main/f%C3%A1ser-acento.png" alt="Fáser Car" class="w-[429px] md:w-[533px] lg:w-[650px] object-contain -mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] brightness-150 contrast-125 saturate-150">
+                <!-- Sombra reduzida para 20px de raio e brilho aumentado -->
+                <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/main/f%C3%A1ser-acento.png" alt="Fáser Car" class="w-[429px] md:w-[533px] lg:w-[650px] object-contain -mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] brightness-125 contrast-125 saturate-150">
                 <h1 class="sr-only">Fáser Car</h1>
                 <h2 class="text-4xl md:text-6xl font-extrabold uppercase leading-none text-outline mb-6 relative z-10">Funilaria e Pintura</h2>
                 
@@ -787,7 +792,7 @@
                     </div>
                 </div>
 
-                <!-- Mapa Iframe (Ajustado para ocupar o bloco inteiro ao lado) -->
+                <!-- Mapa Iframe -->
                 <div class="lg:w-1/2 min-h-[400px] lg:min-h-full flex">
                     <iframe 
                         src="https://maps.google.com/maps?q=F%C3%A1ser%20Car%20Funilaria%20e%20Pintura%20Rua%20Santa%20Catarina%201130%20Piracicaba&t=&z=16&ie=UTF8&iwloc=&output=embed" 
@@ -802,18 +807,17 @@
             <!-- Redes Sociais -->
             <div class="mt-16 text-center">
                 <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Nossas Redes Sociais</h3>
-                <div class="flex justify-center items-center gap-8">
-                    <a href="https://wa.me/5519996159600" target="_blank" class="text-zinc-400 hover:text-brandGreen transition transform hover:scale-110" title="WhatsApp">
+                <div class="flex justify-center items-center gap-12 mt-4">
+                    <a href="https://wa.me/5519996159600" target="_blank" class="text-[#25D366]/80 hover:text-[#25D366] hover:drop-shadow-[0_0_8px_rgba(37,211,102,0.5)] transition-all duration-300 transform hover:scale-110" title="WhatsApp">
                         <i class="fa-brands fa-whatsapp text-4xl"></i>
                     </a>
-                    <a href="https://www.instagram.com/fasercarpiracicaba/" target="_blank" class="text-zinc-400 hover:text-white transition transform hover:scale-110" title="Instagram">
+                    <a href="https://www.instagram.com/fasercarpiracicaba/" target="_blank" class="text-[#E1306C]/80 hover:text-[#E1306C] hover:drop-shadow-[0_0_8px_rgba(225,48,108,0.5)] transition-all duration-300 transform hover:scale-110" title="Instagram">
                         <i class="fa-brands fa-instagram text-4xl"></i>
                     </a>
-                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-400 hover:text-blue-600 transition transform hover:scale-110" title="Facebook">
+                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-[#1877F2]/80 hover:text-[#1877F2] hover:drop-shadow-[0_0_8px_rgba(24,119,242,0.5)] transition-all duration-300 transform hover:scale-110" title="Facebook">
                         <i class="fa-brands fa-facebook text-4xl"></i>
                     </a>
-                    <!-- Provisoriamente usando o link do Facebook no TikTok conforme solicitado -->
-                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-400 hover:text-white transition transform hover:scale-110" title="TikTok">
+                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all duration-300 transform hover:scale-110" title="TikTok">
                         <i class="fa-brands fa-tiktok text-4xl"></i>
                     </a>
                 </div>
@@ -826,16 +830,13 @@
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
             <!-- Logo e Direitos -->
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                <!-- Sombra reduzida para 12px de raio e brilho aumentado para 150 -->
                 <img src="https://raw.githubusercontent.com/INIMAGINAVEL/faser/main/f%C3%A1ser-acento.png" alt="Fáser Car Logo" class="h-16 mb-4 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] brightness-150 contrast-125 saturate-150">
                 <p class="text-xs text-zinc-500">© 2026 Fáser Car. Todos os direitos reservados.</p>
                 <p class="text-xs text-zinc-600 mt-1">Desenvolvido para alta performance por <strong>Arnaldo Amaro</strong>.</p>
             </div>
             
-            <!-- Contatos no Rodapé explicitando os números e o Botão direto -->
+            <!-- Contatos no Rodapé -->
             <div class="flex flex-col items-center md:items-end gap-3 text-sm text-zinc-400 w-full md:w-auto mt-4 md:mt-0">
-                
-                <!-- Telefone Fixo -->
                 <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-1 sm:gap-2 w-full">
                     <div class="flex items-center gap-2">
                         <i class="fa-solid fa-phone text-primary"></i> 
@@ -844,7 +845,6 @@
                     <span class="whitespace-nowrap">(19) 3411-3939</span>
                 </div>
                 
-                <!-- Celular / WhatsApp -->
                 <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-1 sm:gap-2 w-full">
                     <div class="flex items-center gap-2">
                         <i class="fa-solid fa-mobile-screen text-brandGreen"></i> 
@@ -884,7 +884,6 @@
                 menu.classList.toggle('flex');
             });
 
-            // Fecha o menu mobile ao clicar em um link
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     menu.classList.add('hidden');
@@ -921,8 +920,6 @@
 
             // --- BOTÃO VOLTAR AO TOPO E CONTROLE DE MENU ---
             const backToTopBtn = document.getElementById('backToTop');
-            
-            // Referências aos itens do menu
             const navSobre = document.getElementById('nav-sobre');
             const mobileNavSobre = document.getElementById('mobile-nav-sobre');
             
@@ -936,19 +933,22 @@
                     backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
                 }
                 
-                // Controle do Menu "Sobre" no Cabeçalho
+                // Controle do Menu "Sobre" no Cabeçalho (Transição Suave sem empurrar)
                 if (window.scrollY > 50) {
-                    // Mostra o "Sobre" no menu ao sair do topo
-                    if(navSobre) navSobre.classList.remove('hidden');
+                    if(navSobre) {
+                        navSobre.classList.remove('opacity-0', 'pointer-events-none', '-translate-x-2');
+                        navSobre.classList.add('opacity-100', 'translate-x-0');
+                    }
                     if(mobileNavSobre) mobileNavSobre.classList.remove('hidden');
                 } else {
-                    // Esconde o "Sobre" no menu quando está no topo
-                    if(navSobre) navSobre.classList.add('hidden');
+                    if(navSobre) {
+                        navSobre.classList.add('opacity-0', 'pointer-events-none', '-translate-x-2');
+                        navSobre.classList.remove('opacity-100', 'translate-x-0');
+                    }
                     if(mobileNavSobre) mobileNavSobre.classList.add('hidden');
                 }
             });
 
-            // Dispara o evento de scroll uma vez ao carregar para garantir o estado inicial correto
             window.dispatchEvent(new Event('scroll'));
 
             // --- LIGHTBOX DA GALERIA ---
@@ -958,11 +958,9 @@
 
             galleryImages.forEach(img => {
                 img.addEventListener('click', () => {
-                    // Ao clicar, passa a imagem para a caixa flutuante
                     lightboxImg.src = img.src; 
                     lightbox.classList.remove('hidden');
                     
-                    // Pequeno atraso para a transição suave de opacidade funcionar
                     setTimeout(() => {
                         lightbox.classList.remove('opacity-0');
                         lightboxImg.classList.remove('scale-95');
@@ -971,13 +969,11 @@
                 });
             });
 
-            // Fechar ao clicar em qualquer lugar da caixa flutuante
             lightbox.addEventListener('click', () => {
                 lightbox.classList.add('opacity-0');
                 lightboxImg.classList.remove('scale-100');
                 lightboxImg.classList.add('scale-95');
                 
-                // Aguarda o fim da transição para esconder o elemento
                 setTimeout(() => {
                     lightbox.classList.add('hidden');
                 }, 300);
@@ -989,21 +985,17 @@
             const nextReviewBtn = document.getElementById('next-review');
 
             if(reviewsTrack && prevReviewBtn && nextReviewBtn) {
-                // Valor de rolagem aproxima a largura de um card + gap
                 const scrollAmount = 350; 
                 let autoScrollInterval;
 
                 const startAutoScroll = () => {
                     autoScrollInterval = setInterval(() => {
-                        // Verifica se chegou ao final do carrossel (com uma margem de segurança de 10px)
                         if (reviewsTrack.scrollLeft + reviewsTrack.clientWidth >= reviewsTrack.scrollWidth - 10) {
-                            // Volta para o início
                             reviewsTrack.scrollTo({ left: 0, behavior: 'smooth' });
                         } else {
-                            // Avança um card
                             reviewsTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                         }
-                    }, 3500); // Rola a cada 3.5 segundos
+                    }, 3500); 
                 };
 
                 const stopAutoScroll = () => {
@@ -1013,7 +1005,7 @@
                 prevReviewBtn.addEventListener('click', () => {
                     reviewsTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
                     stopAutoScroll();
-                    startAutoScroll(); // Reseta o timer ao clicar
+                    startAutoScroll(); 
                 });
 
                 nextReviewBtn.addEventListener('click', () => {
@@ -1023,26 +1015,22 @@
                         reviewsTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                     }
                     stopAutoScroll();
-                    startAutoScroll(); // Reseta o timer ao clicar
+                    startAutoScroll(); 
                 });
 
-                // Pausa a rolagem se o usuário colocar o mouse em cima (ou tocar no celular)
                 reviewsTrack.addEventListener('mouseenter', stopAutoScroll);
                 reviewsTrack.addEventListener('mouseleave', startAutoScroll);
                 reviewsTrack.addEventListener('touchstart', stopAutoScroll, {passive: true});
                 reviewsTrack.addEventListener('touchend', startAutoScroll, {passive: true});
 
-                // Inicia a rolagem automática
                 startAutoScroll();
             }
 
             // --- PROTEÇÃO DO CÓDIGO FONTE ---
-            // Bloqueia clique direito (menu de contexto)
             document.addEventListener('contextmenu', function(e) {
                 e.preventDefault();
             });
 
-            // Bloqueia atalhos de teclado comuns para inspeção de código (F12, Ctrl+U, Ctrl+Shift+I/J/C)
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'F12' || 
                    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) || 
