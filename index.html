@@ -84,7 +84,7 @@
         ::-webkit-scrollbar-thumb { background: #333; }
         ::-webkit-scrollbar-thumb:hover { background: #C8102E; }
         
-        /* CSS Extra Obrigatório */
+        /*  CSS extra obrigatório */
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -112,29 +112,35 @@
                 <a href="#galeria" class="nav-item hover:text-primary transition">Galeria</a>
                 <a href="#localizacao" id="nav-contato" class="nav-item hover:text-primary transition">Mapa</a>
                 
-                <!-- Indicador de Menu Dinâmico -->
+                <!-- Indicador de Menu Dinâmico (Linha com pontas afiadas) -->
                 <div id="nav-indicator" class="absolute -bottom-[18px] h-[2px] bg-primary transition-all duration-300 opacity-0 pointer-events-none rounded-none" style="width: 0; left: 0;"></div>
             </nav>
 
             <!-- Contato e Botão (Desktop) -->
             <div class="hidden lg:flex items-center gap-6">
                 <div class="flex items-center gap-4 border-r border-zinc-700 pr-6">
+                    
+                    <!-- Box Telefone Fixo -->
                     <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded border border-zinc-800">
                         <i class="fa-solid fa-phone text-primary text-2xl"></i>
                         <div class="flex flex-col text-left">
-                            <span class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Telefone Fixo</span>
-                            <a href="tel:+551934113939" class="text-lg font-bold text-white hover:text-primary transition">(19) 3411-3939</a>
+                            <span class="text-[10px] text-gray-400 uppercase tracking-wider font-bold leading-none mb-1">Telefone Fixo</span>
+                            <a href="tel:+551934113939" class="text-base font-bold text-white hover:text-primary transition leading-none">(19) 3411-3939</a>
                         </div>
                     </div>
+
+                    <!-- Box Celular / WhatsApp -->
                     <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded border border-zinc-800">
                         <i class="fa-brands fa-whatsapp text-brandGreen text-2xl"></i>
                         <div class="flex flex-col text-left">
-                            <span class="text-[10px] text-brandGreen uppercase tracking-wider font-bold">Celular / WhatsApp</span>
-                            <a href="https://wa.me/5519996159600" target="_blank" class="text-lg font-bold text-white hover:text-brandGreen transition">(19) 99615-9600</a>
+                            <span class="text-[10px] text-brandGreen uppercase tracking-wider font-bold leading-none mb-1">WhatsApp</span>
+                            <a href="https://wa.me/5519996159600" target="_blank" class="text-base font-bold text-white hover:text-brandGreen transition leading-none">(19) 99615-9600</a>
                         </div>
                     </div>
+                    
                 </div>
-                <a href="#localizacao" id="header-orcamento-btn" class="bg-primary text-white px-6 py-2.5 font-bold text-base hover:bg-primaryHover transition-all duration-500 rounded opacity-0 pointer-events-none translate-x-2">Fazer Orçamento</a>
+                <!-- Botão dinâmico: começa invisível -->
+                <a href="#localizacao" id="header-orcamento-btn" class="bg-primary text-white px-6 py-2.5 font-bold text-base hover:bg-primaryHover transition-all duration-500 rounded opacity-0 pointer-events-none translate-x-2 shadow-lg shadow-primary/20">Fazer Orçamento</a>
             </div>
             
             <!-- Botão Menu Mobile -->
@@ -160,22 +166,27 @@
         </nav>
     </header>
 
-    <!-- Seção Hero -->
+    <!-- Seção Hero com Carrossel -->
     <section id="home" class="min-h-screen flex items-center relative pt-20 border-b border-primary/30">
         <div id="hero-bg-container"></div>
         <div class="hero-overlay"></div>
 
         <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between z-10 relative">
+            <!-- Conteúdo Esquerdo -->
             <div class="max-w-2xl w-full mt-10 lg:mt-0">
                 <div class="inline-block bg-brandGreen/20 border border-brandGreen text-brandGreen px-3 py-1 text-xs font-bold rounded mb-4 uppercase tracking-wider">
                     <i class="fa-solid fa-calendar-check mr-1"></i> Mais de 30 anos de mercado
                 </div>
+                
                 <img src="f%C3%A1ser-acento.png" alt="Fáser Car" class="w-full max-w-[380px] md:max-w-[533px] lg:max-w-[650px] object-contain mb-2 md:-mb-4 lg:-mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] brightness-125 contrast-125 saturate-150 relative z-20">
+                
                 <h1 class="sr-only">Fáser Car</h1>
                 <h2 class="text-4xl md:text-6xl font-extrabold uppercase leading-none text-outline mb-6 relative z-10 pt-2 md:pt-0">Funilaria e Pintura</h2>
+                
                 <p class="text-gray-300 mb-8 text-base leading-relaxed">
                     A Fáser Car é o centro automotivo de referência em Piracicaba e região para reparos de colisões e estética. Trabalhamos com <strong>veículos modernos de todas as marcas</strong> (nacionais e importados), entregando funilaria de alto padrão, pintura impecável em estufa e agilidade no processo. Atendemos pessoas físicas, frotas empresariais (PJ) e somos credenciados e parceiros de <strong>todas as seguradoras</strong>.
                 </p>
+                
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#localizacao" class="bg-primary text-white text-center px-8 py-4 font-bold text-sm hover:bg-primaryHover transition rounded shadow-lg shadow-primary/30">Fazer Orçamento</a>
                     <a href="#servicos" class="border-2 border-white text-white text-center px-8 py-4 font-bold text-sm hover:bg-white hover:text-black transition rounded">Nossas Especialidades</a>
@@ -184,19 +195,17 @@
         </div>
     </section>
 
-    <!-- Nossos Serviços -->
+    <!-- Nossos Serviços (Especialidades) -->
     <section id="servicos" class="py-20 bg-darkBg border-b border-zinc-900">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div>
-                    <!-- Corrigido para fonte e cor padrão das outras seções -->
                     <h2 class="text-3xl font-bold mb-2">Nossas <span class="text-primary">Especialidades</span></h2>
                     <p class="text-textGray text-sm">Do reparo estrutural de colisões ao brilho de exposição. Cuidamos de cada detalhe do seu veículo.</p>
                 </div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Serviço 1: Funilaria e Pintura -->
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-car-burst"></i>
@@ -204,7 +213,6 @@
                     <h3 class="text-xl font-bold mb-3 text-white">Funilaria e Pintura</h3>
                     <p class="text-sm text-textGray leading-relaxed">Restauração de colisões, reparos estruturais e repintura em cabine estufa profissional.</p>
                 </div>
-                <!-- Outros serviços mantidos conforme versão estável -->
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-hammer"></i>
@@ -217,7 +225,7 @@
                         <i class="fa-solid fa-car-side"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Polimento Técnico</h3>
-                    <p class="text-sm text-textGray leading-relaxed">Foco na correção do verniz. Remoção de riscos superficiais, hologramas e oxidação.</p>
+                    <p class="text-sm text-textGray leading-relaxed">Foco na correção do verniz e remoção de riscos superficiais, hologramas e oxidação.</p>
                 </div>
                 <div class="bg-darkCard border border-primary rounded-lg p-6 relative shadow-[0_0_15px_rgba(200,16,46,0.1)] flex flex-col">
                     <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg">PREMIUM</div>
@@ -225,14 +233,14 @@
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Vitrificação</h3>
-                    <p class="text-sm text-textGray leading-relaxed mb-4">Escudo nano-tecnológico de proteção cerâmica sobre o verniz. Repele sujeira e água.</p>
+                    <p class="text-sm text-textGray leading-relaxed mb-4">Escudo nano-tecnológico de proteção cerâmica. Repele sujeira e protege contra raios UV.</p>
                 </div>
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-soap"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Lavagem Completa</h3>
-                    <p class="text-sm text-textGray leading-relaxed">Lavagem técnica detalhada da carroceria com produtos específicos que não agridem a pintura.</p>
+                    <p class="text-sm text-textGray leading-relaxed">Lavagem técnica detalhada da carroceria com produtos que não agridem a pintura.</p>
                 </div>
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
@@ -249,19 +257,17 @@
     <section id="seguradoras" class="py-16 bg-[#0a0a0a] border-b border-zinc-900">
         <div class="container mx-auto px-6 text-center max-w-4xl">
             <h3 class="text-3xl font-bold mb-4">Trabalhamos com <span class="text-primary">Todas as Seguradoras</span></h3>
-            <p class="text-sm text-textGray leading-relaxed mb-10">
-                Na Fáser Car, o cliente tem livre escolha. Em caso de sinistro, conduzimos todo o processo junto ao corretor e à seguradora.
-            </p>
+            <p class="text-sm text-textGray leading-relaxed mb-10">Na Fáser Car, o cliente tem livre escolha. Em caso de sinistro, conduzimos todo o processo.</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-50 grayscale">
                 <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">PORTO SEGURO</div>
                 <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">SULAMÉRICA</div>
                 <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">BRADESCO</div>
-                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">+ OUTRAS</div>
+                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">AZUL SEGUROS</div>
             </div>
         </div>
     </section>
 
-    <!-- Galeria de Fotos -->
+    <!-- Galeria -->
     <section id="galeria" class="py-16 bg-darkBg border-b border-zinc-900">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-2 text-center">Nossos <span class="text-primary">Trabalhos</span></h2>
@@ -283,7 +289,7 @@
         </div>
     </section>
 
-    <!-- Avaliações do Google (Comentários REAIS) -->
+    <!-- Avaliações -->
     <section id="avaliacoes" class="py-16 bg-[#0a0a0a]">
         <div class="container mx-auto">
             <div class="flex flex-col items-center mb-10 text-center">
@@ -294,10 +300,8 @@
                 <p class="text-textGray text-sm">Depoimentos reais de quem confia no nosso trabalho.</p>
             </div>
             
-            <!-- Centralização perfeita no mobile (max-w-9xl) -->
+            <!-- Centralização perfeita no mobile -->
             <div class="relative max-w-9xl mx-auto px-0 md:px-12">
-                
-                <!-- Botões de Navegação (Desktop) -->
                 <button id="prev-review" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-12 h-12 rounded-full items-center justify-center transition border border-gray-300">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
@@ -305,10 +309,8 @@
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
 
-                <!-- Container do carrossel (versão otimizada) -->
+                <!--  Container do carrossel (versão otimizada) -->
                 <div id="reviews-track" class="flex gap-6 overflow-x-auto snap-x snap-proximity scroll-smooth hide-scrollbar py-6 px-4 scroll-pl-4 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] overscroll-x-contain">
-                    
-                    <!--  Card responsivo correto (18 Cards Reais) -->
                     
                     <!-- Gian paulo Carrasco -->
                     <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
@@ -537,18 +539,20 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                             <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
                                 <strong class="block text-white text-lg mb-1">Endereço</strong>
-                                <div class="flex items-start gap-3 text-textGray text-sm">
+                                <div class="flex items-start gap-3 text-textGray text-base md:text-lg">
                                     <i class="fa-solid fa-location-dot text-primary mt-1 text-xl"></i>
-                                    <span>Rua Santa Catarina, 1130<br>Água Branca, Piracicaba - SP</span>
+                                    <div>
+                                        <span>Rua Santa Catarina, 1130<br>Água Branca, Piracicaba - SP</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
                                 <strong class="block text-white text-lg mb-1">Contatos</strong>
-                                <div class="flex items-center gap-3 text-textGray text-sm font-medium">
+                                <div class="flex items-center gap-3 text-textGray text-base md:text-lg font-medium mt-2">
                                     <i class="fa-brands fa-whatsapp text-brandGreen text-2xl"></i>
                                     <a href="https://wa.me/5519996159600" target="_blank" class="hover:text-white transition">(19) 99615-9600</a>
                                 </div>
-                                <div class="flex items-center gap-3 text-textGray text-sm font-medium">
+                                <div class="flex items-center gap-3 text-textGray text-base md:text-lg font-medium mt-4">
                                     <i class="fa-solid fa-phone text-primary text-xl"></i>
                                     <a href="tel:+551934113939" class="hover:text-white transition">(19) 3411-3939</a>
                                 </div>
@@ -570,14 +574,14 @@
                     <iframe src="https://maps.google.com/maps?q=F%C3%A1ser%20Car%20Funilaria%20e%20Pintura%20Rua%20Santa%20Catarina%201130%20Piracicaba&t=&z=16&ie=UTF8&iwloc=&output=embed" class="w-full h-full min-h-[400px] grayscale hover:grayscale-0 transition duration-500 flex-grow" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            
+            <!-- Redes Sociais -->
             <div class="mt-16 text-center">
-                <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Redes Sociais</h3>
+                <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Nossas Redes Sociais</h3>
                 <div class="flex justify-center items-center gap-12 mt-4">
-                    <a href="https://wa.me/5519996159600" target="_blank" class="text-[#25D366]/80 hover:text-[#25D366] hover:drop-shadow-[0_0_8px_rgba(37,211,102,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-whatsapp text-4xl"></i></a>
-                    <a href="https://www.instagram.com/fasercarpiracicaba/" target="_blank" class="text-[#E1306C]/80 hover:text-[#E1306C] hover:drop-shadow-[0_0_8px_rgba(225,48,108,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-instagram text-4xl"></i></a>
-                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-[#1877F2]/80 hover:text-[#1877F2] hover:drop-shadow-[0_0_8px_rgba(24,119,242,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-facebook text-4xl"></i></a>
-                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-300 hover:text-white transition-all transform hover:scale-110"><i class="fa-brands fa-tiktok text-4xl"></i></a>
+                    <a href="https://wa.me/5519996159600" target="_blank" class="text-[#25D366]/80 hover:text-[#25D366] hover:drop-shadow-[0_0_8px_rgba(37,211,102,0.5)] transition-all duration-300 transform hover:scale-110"><i class="fa-brands fa-whatsapp text-4xl"></i></a>
+                    <a href="https://www.instagram.com/fasercarpiracicaba/" target="_blank" class="text-[#E1306C]/80 hover:text-[#E1306C] hover:drop-shadow-[0_0_8px_rgba(225,48,108,0.5)] transition-all duration-300 transform hover:scale-110"><i class="fa-brands fa-instagram text-4xl"></i></a>
+                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-[#1877F2]/80 hover:text-[#1877F2] hover:drop-shadow-[0_0_8px_rgba(24,119,242,0.5)] transition-all duration-300 transform hover:scale-110"><i class="fa-brands fa-facebook text-4xl"></i></a>
+                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-300 hover:text-white transition-all duration-300 transform hover:scale-110"><i class="fa-brands fa-tiktok text-4xl"></i></a>
                 </div>
             </div>
         </div>
@@ -662,12 +666,37 @@
                     orcamentoBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-x-2'); orcamentoBtn.classList.remove('opacity-100', 'translate-x-0');
                 }
                 
+                // Lógica de Deteção de Secção (Scrollspy) Corrigida para o Mapa
                 let currentId = '';
-                sections.forEach(section => { if (scrollY >= section.offsetTop - 200) currentId = section.getAttribute('id'); });
+                sections.forEach(section => { 
+                    if (scrollY >= section.offsetTop - 200) {
+                        currentId = section.getAttribute('id'); 
+                    }
+                });
+
+                // Ajuste para garantir que o "Mapa" seja detetado se chegar ao fundo
+                const isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 150;
+                if (isAtBottom) {
+                    currentId = 'localizacao';
+                }
+
                 let activeElem = null;
-                navItems.forEach(item => { item.classList.remove('text-primary'); const href = item.getAttribute('href').substring(1); if (href === currentId) { activeElem = item; item.classList.add('text-primary'); } });
-                if (activeElem && currentId !== 'home') { navIndicator.style.width = `${activeElem.offsetWidth}px`; navIndicator.style.left = `${activeElem.offsetLeft}px`; navIndicator.classList.remove('opacity-0'); }
-                else { navIndicator.classList.add('opacity-0'); }
+                navItems.forEach(item => { 
+                    item.classList.remove('text-primary'); 
+                    const href = item.getAttribute('href').substring(1); 
+                    if (href === currentId) { 
+                        activeElem = item; 
+                        item.classList.add('text-primary'); 
+                    } 
+                });
+
+                if (activeElem && currentId !== 'home') { 
+                    navIndicator.style.width = `${activeElem.offsetWidth}px`; 
+                    navIndicator.style.left = `${activeElem.offsetLeft}px`; 
+                    navIndicator.classList.remove('opacity-0'); 
+                } else { 
+                    navIndicator.classList.add('opacity-0'); 
+                }
             });
 
             window.dispatchEvent(new Event('scroll'));
@@ -684,11 +713,11 @@
             const prevBtn = document.getElementById('prev-review');
             const nextBtn = document.getElementById('next-review');
             if(track && prevBtn && nextBtn) {
-                const scrollAmount = 350; 
-                let autoScroll = setInterval(() => { if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }, 4500);
-                const resetTimer = () => { clearInterval(autoScroll); autoScroll = setInterval(() => { if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }, 4500); };
-                prevBtn.addEventListener('click', () => { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); resetTimer(); });
-                nextBtn.addEventListener('click', () => { if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); resetTimer(); });
+                const scrollByAmount = 350; 
+                let autoScroll = setInterval(() => { if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: scrollByAmount, behavior: 'smooth' }); }, 4500);
+                const resetTimer = () => { clearInterval(autoScroll); autoScroll = setInterval(() => { if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: scrollByAmount, behavior: 'smooth' }); }, 4500); };
+                prevBtn.addEventListener('click', () => { track.scrollBy({ left: -scrollByAmount, behavior: 'smooth' }); resetTimer(); });
+                nextBtn.addEventListener('click', () => { if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: scrollByAmount, behavior: 'smooth' }); resetTimer(); });
             }
 
             // PROTEÇÃO
