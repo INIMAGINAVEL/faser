@@ -30,6 +30,9 @@
                         darkCard: '#141414',
                         textGray: '#a1a1aa'
                     },
+                    maxWidth: {
+                        '9xl': '120rem',
+                    },
                     fontSize: {
                         'xs': '0.85rem',   
                         'sm': '1.05rem',   
@@ -80,8 +83,15 @@
         ::-webkit-scrollbar-track { background: #0d0d0d; }
         ::-webkit-scrollbar-thumb { background: #333; }
         ::-webkit-scrollbar-thumb:hover { background: #C8102E; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* CSS Extra Obrigatório */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="font-sans antialiased overflow-x-hidden">
@@ -102,15 +112,13 @@
                 <a href="#galeria" class="nav-item hover:text-primary transition">Galeria</a>
                 <a href="#localizacao" id="nav-contato" class="nav-item hover:text-primary transition">Mapa</a>
                 
-                <!-- Indicador de Menu Dinâmico (Linha com pontas afiadas) -->
+                <!-- Indicador de Menu Dinâmico -->
                 <div id="nav-indicator" class="absolute -bottom-[18px] h-[2px] bg-primary transition-all duration-300 opacity-0 pointer-events-none rounded-none" style="width: 0; left: 0;"></div>
             </nav>
 
             <!-- Contato e Botão (Desktop) -->
             <div class="hidden lg:flex items-center gap-6">
                 <div class="flex items-center gap-4 border-r border-zinc-700 pr-6">
-                    
-                    <!-- Box Telefone Fixo -->
                     <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded border border-zinc-800">
                         <i class="fa-solid fa-phone text-primary text-2xl"></i>
                         <div class="flex flex-col text-left">
@@ -118,8 +126,6 @@
                             <a href="tel:+551934113939" class="text-lg font-bold text-white hover:text-primary transition">(19) 3411-3939</a>
                         </div>
                     </div>
-
-                    <!-- Box Celular / WhatsApp -->
                     <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded border border-zinc-800">
                         <i class="fa-brands fa-whatsapp text-brandGreen text-2xl"></i>
                         <div class="flex flex-col text-left">
@@ -127,9 +133,7 @@
                             <a href="https://wa.me/5519996159600" target="_blank" class="text-lg font-bold text-white hover:text-brandGreen transition">(19) 99615-9600</a>
                         </div>
                     </div>
-                    
                 </div>
-                <!-- Botão dinâmico: começa invisível -->
                 <a href="#localizacao" id="header-orcamento-btn" class="bg-primary text-white px-6 py-2.5 font-bold text-base hover:bg-primaryHover transition-all duration-500 rounded opacity-0 pointer-events-none translate-x-2">Fazer Orçamento</a>
             </div>
             
@@ -156,31 +160,22 @@
         </nav>
     </header>
 
-    <!-- Seção Hero com Carrossel -->
+    <!-- Seção Hero -->
     <section id="home" class="min-h-screen flex items-center relative pt-20 border-b border-primary/30">
-        <!-- Background Carrossel -->
-        <div id="hero-bg-container">
-            <!-- Imagens inseridas via JS -->
-        </div>
+        <div id="hero-bg-container"></div>
         <div class="hero-overlay"></div>
 
         <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between z-10 relative">
-            <!-- Conteúdo Esquerdo -->
             <div class="max-w-2xl w-full mt-10 lg:mt-0">
                 <div class="inline-block bg-brandGreen/20 border border-brandGreen text-brandGreen px-3 py-1 text-xs font-bold rounded mb-4 uppercase tracking-wider">
                     <i class="fa-solid fa-calendar-check mr-1"></i> Mais de 30 anos de mercado
                 </div>
-                
-                <!-- Margens responsivas (mb-2 no mobile, -mb-8 no PC) e largura fluida adicionadas aqui -->
                 <img src="f%C3%A1ser-acento.png" alt="Fáser Car" class="w-full max-w-[380px] md:max-w-[533px] lg:max-w-[650px] object-contain mb-2 md:-mb-4 lg:-mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] brightness-125 contrast-125 saturate-150 relative z-20">
-                
                 <h1 class="sr-only">Fáser Car</h1>
                 <h2 class="text-4xl md:text-6xl font-extrabold uppercase leading-none text-outline mb-6 relative z-10 pt-2 md:pt-0">Funilaria e Pintura</h2>
-                
                 <p class="text-gray-300 mb-8 text-base leading-relaxed">
                     A Fáser Car é o centro automotivo de referência em Piracicaba e região para reparos de colisões e estética. Trabalhamos com <strong>veículos modernos de todas as marcas</strong> (nacionais e importados), entregando funilaria de alto padrão, pintura impecável em estufa e agilidade no processo. Atendemos pessoas físicas, frotas empresariais (PJ) e somos credenciados e parceiros de <strong>todas as seguradoras</strong>.
                 </p>
-                
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#localizacao" class="bg-primary text-white text-center px-8 py-4 font-bold text-sm hover:bg-primaryHover transition rounded shadow-lg shadow-primary/30">Fazer Orçamento</a>
                     <a href="#servicos" class="border-2 border-white text-white text-center px-8 py-4 font-bold text-sm hover:bg-white hover:text-black transition rounded">Nossas Especialidades</a>
@@ -189,11 +184,12 @@
         </div>
     </section>
 
-    <!-- Nossos Serviços (Especialidades) -->
+    <!-- Nossos Serviços -->
     <section id="servicos" class="py-20 bg-darkBg border-b border-zinc-900">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div>
+                    <!-- Corrigido para fonte e cor padrão das outras seções -->
                     <h2 class="text-3xl font-bold mb-2">Nossas <span class="text-primary">Especialidades</span></h2>
                     <p class="text-textGray text-sm">Do reparo estrutural de colisões ao brilho de exposição. Cuidamos de cada detalhe do seu veículo.</p>
                 </div>
@@ -206,68 +202,44 @@
                         <i class="fa-solid fa-car-burst"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Funilaria e Pintura</h3>
-                    <p class="text-sm text-textGray leading-relaxed">
-                        Restauração de colisões, reparos estruturais e repintura em cabine estufa profissional. Acerto de cor exato para manter a originalidade do seu veículo com materiais de alta tecnologia.
-                    </p>
+                    <p class="text-sm text-textGray leading-relaxed">Restauração de colisões, reparos estruturais e repintura em cabine estufa profissional.</p>
                 </div>
-
-                <!-- Serviço 2: Martelinho de Ouro -->
+                <!-- Outros serviços mantidos conforme versão estável -->
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-hammer"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Martelinho de Ouro</h3>
-                    <p class="text-sm text-textGray leading-relaxed">
-                        Técnica artesanal para remoção de amassados (chuvas de granizo, portas de estacionamento e pequenos impactos), mantendo 100% da pintura original intacta e valorizando o veículo.
-                    </p>
+                    <p class="text-sm text-textGray leading-relaxed">Técnica artesanal para remoção de amassados mantendo 100% da pintura original intacta.</p>
                 </div>
-
-                <!-- Serviço 3: Polimento Técnico -->
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-car-side"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Polimento Técnico</h3>
-                    <p class="text-sm text-textGray leading-relaxed">
-                        Foco na correção do verniz. Remoção de riscos superficiais, "teias de aranha", hologramas e oxidação. Inclui corte, refino e lustro para restaurar o brilho e espelhamento da pintura.
-                    </p>
+                    <p class="text-sm text-textGray leading-relaxed">Foco na correção do verniz. Remoção de riscos superficiais, hologramas e oxidação.</p>
                 </div>
-
-                <!-- Serviço 4: Vitrificação -->
                 <div class="bg-darkCard border border-primary rounded-lg p-6 relative shadow-[0_0_15px_rgba(200,16,46,0.1)] flex flex-col">
                     <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg">PREMIUM</div>
                     <div class="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Vitrificação</h3>
-                    <p class="text-sm text-textGray leading-relaxed mb-4">
-                        Escudo nano-tecnológico de proteção cerâmica sobre o verniz. Repele sujeira, água e protege contra raios UV e micro-riscos. Duração da proteção de até 3 anos, facilitando as lavagens.
-                    </p>
-                    <p class="text-xs text-zinc-400 italic mt-auto pt-4 border-t border-zinc-800/50">
-                        * A durabilidade de até 3 anos exige cuidados pós-aplicação. O uso de lavagens adequadas sem produtos corrosivos é essencial para não prejudicar a película.
-                    </p>
+                    <p class="text-sm text-textGray leading-relaxed mb-4">Escudo nano-tecnológico de proteção cerâmica sobre o verniz. Repele sujeira e água.</p>
                 </div>
-
-                <!-- Serviço 5: Lavagem Técnica -->
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-soap"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Lavagem Completa</h3>
-                    <p class="text-sm text-textGray leading-relaxed">
-                        Lavagem técnica detalhada da carroceria com produtos específicos que não agridem a pintura. Inclui limpeza de caixas de roda, rodas e finalização com ceras de proteção rápida.
-                    </p>
+                    <p class="text-sm text-textGray leading-relaxed">Lavagem técnica detalhada da carroceria com produtos específicos que não agridem a pintura.</p>
                 </div>
-
-                <!-- Serviço 6: Higienização -->
                 <div class="bg-darkCard border border-zinc-800 rounded-lg p-6 hover:border-primary transition duration-300">
                     <div class="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center text-primary text-2xl mb-6">
                         <i class="fa-solid fa-spray-can-sparkles"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">Higienização Interna</h3>
-                    <p class="text-sm text-textGray leading-relaxed">
-                        Limpeza profunda e revitalização do interior do veículo. Remoção de manchas e odores em estofados (tecido ou couro), teto, carpetes, painéis e dutos de ar condicionado.
-                    </p>
+                    <p class="text-sm text-textGray leading-relaxed">Limpeza profunda e revitalização do interior do veículo. Remoção de manchas e odores.</p>
                 </div>
             </div>
         </div>
@@ -278,16 +250,12 @@
         <div class="container mx-auto px-6 text-center max-w-4xl">
             <h3 class="text-3xl font-bold mb-4">Trabalhamos com <span class="text-primary">Todas as Seguradoras</span></h3>
             <p class="text-sm text-textGray leading-relaxed mb-10">
-                Na Fáser Car, o cliente tem livre escolha. Em caso de sinistro, conduzimos todo o processo junto ao corretor e à seguradora, garantindo peças originais e serviços no nosso padrão de excelência de 30 anos, sem que você precise aceitar oficinas credenciadas de qualidade incerta.
+                Na Fáser Car, o cliente tem livre escolha. Em caso de sinistro, conduzimos todo o processo junto ao corretor e à seguradora.
             </p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-50 grayscale">
                 <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">PORTO SEGURO</div>
                 <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">SULAMÉRICA</div>
                 <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">BRADESCO</div>
-                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">AZUL SEGUROS</div>
-                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">MAPFRE</div>
-                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">HDI</div>
-                <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">TOKIO MARINE</div>
                 <div class="h-16 border border-zinc-700 rounded flex items-center justify-center text-sm font-bold text-zinc-400 bg-darkCard">+ OUTRAS</div>
             </div>
         </div>
@@ -297,462 +265,246 @@
     <section id="galeria" class="py-16 bg-darkBg border-b border-zinc-900">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-2 text-center">Nossos <span class="text-primary">Trabalhos</span></h2>
-        <p class="text-textGray text-sm text-center mb-10">Confira o nível de detalhamento e acabamento entregue aos nossos clientes.</p>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Imagens da pasta "galeria" numeradas de 1 a 12 -->
-            <img src="galeria/1.jpg" alt="Trabalho Fáser Car 1" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
-            <img src="galeria/2.jpg" alt="Trabalho Fáser Car 2" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
-            <img src="galeria/3.jpg" alt="Trabalho Fáser Car 3" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
-            <img src="galeria/4.jpg" alt="Trabalho Fáser Car 4" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
-            <img src="galeria/5.jpg" alt="Trabalho Fáser Car 5" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
-            <img src="galeria/6.jpg" alt="Trabalho Fáser Car 6" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
-            <img src="galeria/7.jpg" alt="Trabalho Fáser Car 7" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
-            <img src="galeria/8.jpg" alt="Trabalho Fáser Car 8" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
-            <img src="galeria/9.jpg" alt="Trabalho Fáser Car 9" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
-            <img src="galeria/10.jpg" alt="Trabalho Fáser Car 10" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
-            <img src="galeria/11.jpg" alt="Trabalho Fáser Car 11" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
-            <img src="galeria/12.jpg" alt="Trabalho Fáser Car 12" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+            <p class="text-textGray text-sm text-center mb-10">Confira o nível de detalhamento entregue aos nossos clientes.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="galeria/1.jpg" alt="Trabalho 1" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+                <img src="galeria/2.jpg" alt="Trabalho 2" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+                <img src="galeria/3.jpg" alt="Trabalho 3" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+                <img src="galeria/4.jpg" alt="Trabalho 4" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+                <img src="galeria/5.jpg" alt="Trabalho 5" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+                <img src="galeria/6.jpg" alt="Trabalho 6" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+                <img src="galeria/7.jpg" alt="Trabalho 7" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+                <img src="galeria/8.jpg" alt="Trabalho 8" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+                <img src="galeria/9.jpg" alt="Trabalho 9" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+                <img src="galeria/10.jpg" alt="Trabalho 10" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+                <img src="galeria/11.jpg" alt="Trabalho 11" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+                <img src="galeria/12.jpg" alt="Trabalho 12" class="gallery-img cursor-pointer w-full h-48 md:h-64 object-cover rounded hover:scale-[1.02] transition duration-300 shadow-md">
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Avaliações do Google (Comentários Reais) -->
+    <!-- Avaliações do Google (Comentários REAIS) -->
     <section id="avaliacoes" class="py-16 bg-[#0a0a0a]">
         <div class="container mx-auto">
-            <div class="flex flex-col items-center mb-10">
-                <div class="flex items-center gap-3 mb-2">
+            <div class="flex flex-col items-center mb-10 text-center">
+                <div class="flex items-center gap-3 mb-2 justify-center">
                     <i class="fa-brands fa-google text-3xl text-white"></i>
                     <h3 class="text-3xl font-bold">Avaliações do Google</h3>
                 </div>
-                <p class="text-textGray text-sm">O que nossos clientes dizem sobre o nosso trabalho.</p>
+                <p class="text-textGray text-sm">Depoimentos reais de quem confia no nosso trabalho.</p>
             </div>
             
-            <!-- Contêiner Ajustado para 7xl e padding para as setas -->
-            <div class="relative max-w-9xl mx-auto px-8 md:px-12">
-                <!-- Botões de Navegação do Carrossel -->
-                <button id="prev-review" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition border border-gray-300">
+            <!-- Centralização perfeita no mobile (max-w-9xl) -->
+            <div class="relative max-w-9xl mx-auto px-0 md:px-12">
+                
+                <!-- Botões de Navegação (Desktop) -->
+                <button id="prev-review" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-12 h-12 rounded-full items-center justify-center transition border border-gray-300">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <button id="next-review" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition border border-gray-300">
+                <button id="next-review" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-12 h-12 rounded-full items-center justify-center transition border border-gray-300">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
 
-                <!-- Container do Carrossel com Depoimentos REAIS -->
-                <div id="reviews-track" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar py-4 px-2">
+                <!-- Container do carrossel (versão otimizada) -->
+                <div id="reviews-track" class="flex gap-6 overflow-x-auto snap-x snap-proximity scroll-smooth hide-scrollbar py-6 px-4 scroll-pl-4 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] overscroll-x-contain">
+                    
+                    <!--  Card responsivo correto (18 Cards Reais) -->
                     
                     <!-- Gian paulo Carrasco -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-orange-600 flex items-center justify-center font-bold text-white text-xl">GC</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Gian paulo Carrasco</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 1 ano</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-orange-600 flex items-center justify-center font-bold text-white">GC</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Gian paulo Carrasco</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Excelente atendimento, profissionais educados e simpáticos, entendem muito de carro !! Fiquei com vontade de bater o carro novamente só pra voltar la !! Hahaha mas melhor não kkkkkk"
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Excelente atendimento, profissionais educados e simpáticos, entendem muito de carro !! Fiquei com vontade de bater o carro novamente só pra voltar la !!"</p>
                         </div>
                     </div>
 
                     <!-- leandro carvalho -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-xl">LC</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">leandro carvalho</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 6 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white">LC</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">leandro carvalho</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Ótimo atendimento serviço de alta qualidade e confiança."
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Ótimo atendimento serviço de alta qualidade e confiança. 🙏1"</p>
                         </div>
                     </div>
 
                     <!-- Fernando Furlan -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center font-bold text-white text-xl">FF</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Fernando Furlan</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 4 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center font-bold text-white">FF</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Fernando Furlan</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Ótimo lugar, excelente atendimento, já precisei dos serviços e foi muito bem resolvido com perfeição"
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Ótimo lugar, excelente atendimento, já precisei dos serviços e foi muito bem resolvido com perfeição ❤️1"</p>
                         </div>
                     </div>
 
                     <!-- Cesar Camarinha -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center font-bold text-white text-xl">CC</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Cesar Camarinha</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 3 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center font-bold text-white">CC</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Cesar Camarinha</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Pessoal altamente capacitado. Muita gentileza no atendimento. Recomendo."
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Pessoal altamente capacitado. Muita gentileza no atendimento. Recomendo. 🙏1"</p>
                         </div>
                     </div>
 
                     <!-- Marco Polo Baptista -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center font-bold text-white text-xl">MB</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marco Polo Baptista</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 2 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center font-bold text-white">MB</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Marco Polo Baptista</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Serviços da mais alta qualidade, confiança e rapidez tbm são pontos fortes, recomendo sem sombra de dúvidas."
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Serviços da mais alta qualidade, confiança e rapidez tbm são pontos fortes. 🙏1"</p>
                         </div>
                     </div>
 
                     <!-- Rogerio Monteiro -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-yellow-600 flex items-center justify-center font-bold text-white text-xl">RM</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Rogerio Monteiro</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 4 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center font-bold text-white">RM</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Rogerio Monteiro</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Excelente atendimento... Principalmente a Aline, que acompanhou o meu caso do início ao fim, me dando todo o feedback do serviço."
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Excelente atendimento... Principalmente a Aline, que acompanhou o meu caso do início ao fim. 🙏1"</p>
                         </div>
                     </div>
 
                     <!-- Marilea cavagis -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-teal-600 flex items-center justify-center font-bold text-white text-xl">MC</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marilea cavagis</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 6 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-teal-600 flex items-center justify-center font-bold text-white">MC</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Marilea cavagis</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Eu quero agradecer pelo trabalho MARAVILHOSO que vcs toda a equipe da oficina fizeram no meu carro.. Ele ficou lindo, serviço perfeito adorei e eu hei de voltar aí..."
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Eu quero agradecer pelo trabalho MARAVILHOSO que vcs fizeram. Ele ficou lindo, serviço perfeito adorei. 🙏1"</p>
                         </div>
                     </div>
 
                     <!-- Marcos Moreira -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center font-bold text-white text-xl">MM</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marcos Moreira</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 2 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center font-bold text-white">MM</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Marcos Moreira</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Ótimo atendimento, serviço de qualidade, bom preço"
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Ótimo atendimento, serviço de qualidade, bom preço"</p>
                         </div>
                     </div>
 
                     <!-- Angel Violet Evergarden -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-pink-600 flex items-center justify-center font-bold text-white text-xl">AV</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Angel Violet Evergarden</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 1 ano</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-pink-600 flex items-center justify-center font-bold text-white">AV</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Angel Violet</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Uma oficina perfeita. Estão de parabéns desde a secretaria até os mecânicos. Parabéns."
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Uma oficina perfeita. Estão de parabéns desde a secretaria até os mecânicos. Parabéns.💖"</p>
                         </div>
                     </div>
 
                     <!-- Diogo Rubia -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-cyan-600 flex items-center justify-center font-bold text-white text-xl">DR</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Diogo Rubia</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 8 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-cyan-600 flex items-center justify-center font-bold text-white">DR</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Diogo Rubia</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Top demais melhor serviço da região"
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Top demais melhor serviço da região 🙏1"</p>
                         </div>
                     </div>
 
                     <!-- Marli Nolasco -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-orange-400 flex items-center justify-center font-bold text-white text-xl">MN</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marli Nolasco</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 2 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-orange-400 flex items-center justify-center font-bold text-white">MN</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Marli Nolasco</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Excelente trabalho! Entrega antes do prazo! Eficiência na execução do serviço!"
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Excelente trabalho! Entrega antes do prazo! Eficiência na execução do serviço!"</p>
                         </div>
                     </div>
 
                     <!-- Paulino Akira Shimabukuro -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center font-bold text-white text-xl">PS</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Paulino Akira Shimabukuro</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 4 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center font-bold text-white">PS</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Paulino Akira</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Excelentes profissionais, ótimo atendimento e serviço de primeira."
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Excelentes profissionais, ótimo atendimento e serviço de primeira."</p>
                         </div>
                     </div>
 
                     <!-- Fabiane da Silva Almeida -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-red-400 flex items-center justify-center font-bold text-white text-xl">FA</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Fabiane da Silva Almeida</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 2 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-red-400 flex items-center justify-center font-bold text-white">FA</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Fabiane Almeida</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Atendimento e serviço excelente"
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Atendimento e serviço excelente"</p>
                         </div>
                     </div>
 
                     <!-- Mel Crivello -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-pink-400 flex items-center justify-center font-bold text-white text-xl">MC</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Mel Crivello</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 4 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-pink-400 flex items-center justify-center font-bold text-white">MC</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Mel Crivello</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Excelente atendimento e excelente trabalho!!"
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Excelente atendimento e excelente trabalho!!"</p>
                         </div>
                     </div>
 
                     <!-- Jair Citron -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center font-bold text-white text-xl">JC</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Jair Citron</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 3 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center font-bold text-white">JC</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Jair Citron</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Muito bom serviço"
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Muito bom serviço"</p>
                         </div>
                     </div>
 
                     <!-- Hamilton Alonso Concrevi -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-green-400 flex items-center justify-center font-bold text-white text-xl">HA</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Hamilton Alonso Concrevi</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 7 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-green-400 flex items-center justify-center font-bold text-white">HA</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Hamilton Alonso</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Serviços perfeitos e o Fábio e a Aline são ótimos"
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Serviços perfeitos e o Fábio e a Aline são ótimos 🙏1"</p>
                         </div>
                     </div>
 
                     <!-- Marcio Garcia -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center font-bold text-white text-xl">MG</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marcio Garcia</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 4 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center font-bold text-white">MG</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Marcio Garcia</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "Seu carro sai como novo.... Atendimento então sem palavras...."
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"Seu carro sai como novo.... Atendimento então sem palavras...."</p>
                         </div>
                     </div>
 
                     <!-- Saga Som Prudente -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                    <div class="w-[88%] sm:w-[80%] md:w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between will-change-transform">
                         <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-indigo-400 flex items-center justify-center font-bold text-white text-xl">SS</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Saga Som Prudente</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 2 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="flex gap-4 items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-indigo-400 flex items-center justify-center font-bold text-white">SS</div>
+                                <div><h4 class="font-bold text-gray-900 text-sm">Saga Som Prudente</h4><div class="text-xs text-yellow-500 mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
-                                "A melhor oficina de Martelinho de ouro Funilaria e Pintura da região metropolitana de Piracicaba"
-                            </p>
+                            <p class="text-xs text-gray-700 leading-relaxed italic">"A melhor oficina de Martelinho de ouro e Funilaria de Piracicaba ❤️1"</p>
                         </div>
                     </div>
 
@@ -760,7 +512,7 @@
             </div>
 
             <div class="mt-8 text-center">
-                <a href="https://www.google.com/search?q=fasercar&ie=UTF-8#lrd=0x94c63046b72bf8c7:0xc2eeae048a4a29d2,1,,,," target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition shadow-lg">
+                <a href="https://www.google.com/search?q=fasercar&ie=UTF-8#lrd=0x94c63046b72bf8c7:0xc2eeae048a4a29d2,1,,,," target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition shadow-lg text-sm">
                     Ver todas as avaliações no Google <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
@@ -772,76 +524,38 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center mb-10">
                 <h2 class="text-3xl font-bold mb-4">Venha Fazer Seu <span class="text-primary">Orçamento</span></h2>
-                
-                <!-- Alerta Importante -->
                 <div class="bg-primary/10 border border-primary text-red-100 p-4 rounded-lg inline-block text-sm font-medium mb-8">
                     <i class="fa-solid fa-triangle-exclamation text-primary mr-2"></i> 
-                    <strong>Atenção:</strong> Não realizamos orçamentos via foto. Para garantir a precisão e honestidade dos valores, a avaliação deve ser feita presencialmente. Ligue ou mande mensagem para mais informações!
+                    <strong>Atenção:</strong> Não realizamos orçamentos via foto. A avaliação deve ser feita presencialmente.
                 </div>
             </div>
 
             <div class="flex flex-col lg:flex-row bg-darkCard border border-zinc-800 rounded-xl overflow-hidden shadow-2xl">
-                <!-- Info e Rotas -->
                 <div class="lg:w-1/2 p-8 flex flex-col justify-between bg-[#111]">
                     <div>
                         <h3 class="text-2xl font-bold mb-6 text-white border-b border-zinc-800 pb-4">Onde Estamos</h3>
-                        
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                            <!-- Box Endereço -->
                             <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
                                 <strong class="block text-white text-lg mb-1">Endereço</strong>
-                                <div class="flex items-start gap-3 text-textGray text-base md:text-lg">
+                                <div class="flex items-start gap-3 text-textGray text-sm">
                                     <i class="fa-solid fa-location-dot text-primary mt-1 text-xl"></i>
-                                    <div>
-                                        <span>Rua Santa Catarina, 1130<br>Água Branca, Piracicaba - SP</span>
-                                        <span class="block text-sm text-zinc-400 mt-1">Próximo à Faculdade Anhanguera</span>
-                                    </div>
+                                    <span>Rua Santa Catarina, 1130<br>Água Branca, Piracicaba - SP</span>
                                 </div>
                             </div>
-
-                            <!-- Box Contatos -->
                             <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
                                 <strong class="block text-white text-lg mb-1">Contatos</strong>
-                                <div class="flex items-center gap-3 text-textGray text-base md:text-lg font-medium mt-2">
+                                <div class="flex items-center gap-3 text-textGray text-sm font-medium">
                                     <i class="fa-brands fa-whatsapp text-brandGreen text-2xl"></i>
-                                    <i class="fa-solid fa-mobile-screen text-textGray text-xl"></i>
                                     <a href="https://wa.me/5519996159600" target="_blank" class="hover:text-white transition">(19) 99615-9600</a>
                                 </div>
-                                <div class="flex items-center gap-3 text-textGray text-base md:text-lg font-medium mt-4">
+                                <div class="flex items-center gap-3 text-textGray text-sm font-medium">
                                     <i class="fa-solid fa-phone text-primary text-xl"></i>
-                                    <a href="tel:+551934113939" class="ml-1 hover:text-white transition">(19) 3411-3939</a>
-                                </div>
-                            </div>
-
-                            <!-- Box Horários -->
-                            <div class="flex flex-col justify-center gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800 md:col-span-2">
-                                <strong class="block text-white text-lg mb-2 flex items-center gap-2">
-                                    <i class="fa-regular fa-clock text-primary text-xl"></i> Horário de Funcionamento
-                                </strong>
-                                
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 text-base text-textGray">
-                                    <div>
-                                        <span class="block text-white font-semibold mb-1 text-lg">Segunda a Quinta:</span>
-                                        <span>07:30 às 18:00</span>
-                                    </div>
-                                    <div>
-                                        <span class="block text-white font-semibold mb-1 text-lg">Sexta-feira:</span>
-                                        <span>07:30 às 17:00</span>
-                                    </div>
-                                    <div class="sm:col-span-2 mt-3 pt-3 border-t border-zinc-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-                                        <span class="text-brandGreen font-semibold flex items-center gap-2 text-base md:text-lg">
-                                            <i class="fa-solid fa-utensils text-lg"></i> Almoço: 11:30 às 13:00
-                                        </span>
-                                        <span class="text-primary font-bold text-lg">Sáb e Dom: Fechado</span>
-                                    </div>
+                                    <a href="tel:+551934113939" class="hover:text-white transition">(19) 3411-3939</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Botões de Rota -->
                     <div class="space-y-3">
-                        <strong class="block text-sm text-zinc-400 mb-2">Traçar Rota Automaticamente:</strong>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <a href="https://waze.com/ul?q=Rua+Santa+Catarina+1130+Piracicaba&navigate=yes" target="_blank" class="w-full bg-[#33ccff] hover:bg-[#0099cc] text-black font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition">
                                 <i class="fa-brands fa-waze text-lg"></i> Waze
@@ -850,308 +564,136 @@
                                 <i class="fa-solid fa-map-location-dot text-lg"></i> Google Maps
                             </a>
                         </div>
-                        <a href="https://m.uber.com/ul/?client_id=FREE&action=setPickup&pickup=my_location&dropoff[formatted_address]=Rua%20Santa%20Catarina%2C%201130%20-%20Piracicaba" target="_blank" class="w-full bg-zinc-800 hover:bg-black text-white font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition border border-zinc-700">
-                            <i class="fa-brands fa-uber text-lg"></i> Ir de Uber
-                        </a>
                     </div>
                 </div>
-
-                <!-- Mapa Iframe -->
-                <div class="lg:w-1/2 min-h-[400px] lg:min-h-full flex">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=F%C3%A1ser%20Car%20Funilaria%20e%20Pintura%20Rua%20Santa%20Catarina%201130%20Piracicaba&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-                        class="w-full h-full min-h-[400px] grayscale hover:grayscale-0 transition duration-500 flex-grow"
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
+                <div class="lg:w-1/2 min-h-[400px]">
+                    <iframe src="https://maps.google.com/maps?q=F%C3%A1ser%20Car%20Funilaria%20e%20Pintura%20Rua%20Santa%20Catarina%201130%20Piracicaba&t=&z=16&ie=UTF8&iwloc=&output=embed" class="w-full h-full min-h-[400px] grayscale hover:grayscale-0 transition duration-500 flex-grow" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-
-            <!-- Redes Sociais -->
+            
             <div class="mt-16 text-center">
-                <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Nossas Redes Sociais</h3>
+                <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Redes Sociais</h3>
                 <div class="flex justify-center items-center gap-12 mt-4">
-                    <a href="https://wa.me/5519996159600" target="_blank" class="text-[#25D366]/80 hover:text-[#25D366] hover:drop-shadow-[0_0_8px_rgba(37,211,102,0.5)] transition-all duration-300 transform hover:scale-110" title="WhatsApp">
-                        <i class="fa-brands fa-whatsapp text-4xl"></i>
-                    </a>
-                    <a href="https://www.instagram.com/fasercarpiracicaba/" target="_blank" class="text-[#E1306C]/80 hover:text-[#E1306C] hover:drop-shadow-[0_0_8px_rgba(225,48,108,0.5)] transition-all duration-300 transform hover:scale-110" title="Instagram">
-                        <i class="fa-brands fa-instagram text-4xl"></i>
-                    </a>
-                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-[#1877F2]/80 hover:text-[#1877F2] hover:drop-shadow-[0_0_8px_rgba(24,119,242,0.5)] transition-all duration-300 transform hover:scale-110" title="Facebook">
-                        <i class="fa-brands fa-facebook text-4xl"></i>
-                    </a>
-                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all duration-300 transform hover:scale-110" title="TikTok">
-                        <i class="fa-brands fa-tiktok text-4xl"></i>
-                    </a>
+                    <a href="https://wa.me/5519996159600" target="_blank" class="text-[#25D366]/80 hover:text-[#25D366] hover:drop-shadow-[0_0_8px_rgba(37,211,102,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-whatsapp text-4xl"></i></a>
+                    <a href="https://www.instagram.com/fasercarpiracicaba/" target="_blank" class="text-[#E1306C]/80 hover:text-[#E1306C] hover:drop-shadow-[0_0_8px_rgba(225,48,108,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-instagram text-4xl"></i></a>
+                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-[#1877F2]/80 hover:text-[#1877F2] hover:drop-shadow-[0_0_8px_rgba(24,119,242,0.5)] transition-all transform hover:scale-110"><i class="fa-brands fa-facebook text-4xl"></i></a>
+                    <a href="https://www.facebook.com/FASERCARPIRACICABA/" target="_blank" class="text-zinc-300 hover:text-white transition-all transform hover:scale-110"><i class="fa-brands fa-tiktok text-4xl"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé Institucional Corporativo -->
+    <!-- Rodapé -->
     <footer class="bg-black py-12 border-t border-zinc-900 relative z-10">
         <div class="container mx-auto px-6">
-            
             <div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-8 md:gap-12 text-center md:text-left">
-                
-                <!-- Logo Maior -->
                 <div class="flex-shrink-0">
                     <img src="f%C3%A1ser-acento.png" alt="Fáser Car Logo" class="h-24 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] brightness-150 contrast-125 saturate-150">
                 </div>
-                
-                <!-- Texto ao lado -->
                 <div class="max-w-xl md:border-l-2 border-zinc-800 md:pl-8">
-                    <p class="text-base md:text-lg text-zinc-400 font-medium leading-relaxed">
-                        Tradição e excelência automotiva. Mais de 30 anos de mercado cuidando de veículos nacionais e importados.
-                    </p>
+                    <p class="text-base md:text-lg text-zinc-400 font-medium leading-relaxed">Tradição e excelência automotiva. Mais de 30 anos de mercado cuidando de veículos nacionais e importados.</p>
                 </div>
-                
             </div>
-
-            <!-- Linha Inferior (Créditos) -->
             <div class="mt-12 pt-6 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-600">
                 <p>© 2026 Fáser Car. Todos os direitos reservados.</p>
                 <p>Desenvolvido para alta performance por <strong>Arnaldo Amaro</strong>.</p>
             </div>
-            
         </div>
     </footer>
 
-    <!-- Botão Flutuante: Voltar ao Topo -->
-    <a href="#home" id="backToTop" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50 hover:bg-primaryHover text-lg">
-        <i class="fa-solid fa-arrow-up"></i>
-    </a>
+    <!-- Botão Voltar ao Topo -->
+    <a href="#home" id="backToTop" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50 hover:bg-primaryHover text-lg"><i class="fa-solid fa-arrow-up"></i></a>
 
-    <!-- Lightbox da Galeria -->
+    <!-- Lightbox -->
     <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden flex justify-center items-center opacity-0 transition-opacity duration-300 cursor-zoom-out">
         <span class="absolute top-6 right-8 text-white text-4xl font-bold hover:text-primary transition cursor-pointer">&times;</span>
         <img id="lightbox-img" src="" alt="Imagem Ampliada" class="max-w-[95%] max-h-[90%] object-contain rounded shadow-2xl transform scale-95 transition-transform duration-300">
     </div>
 
-    <!-- Scripts da Página -->
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- MENU MOBILE ---
+            // MENU MOBILE
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
             const logoLink = document.getElementById('logo-link');
 
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-                menu.classList.toggle('flex');
-            });
+            btn.addEventListener('click', () => { menu.classList.toggle('hidden'); menu.classList.toggle('flex'); });
+            mobileLinks.forEach(link => { link.addEventListener('click', () => { menu.classList.add('hidden'); menu.classList.remove('flex'); }); });
+            if (logoLink) { logoLink.addEventListener('click', () => { menu.classList.add('hidden'); menu.classList.remove('flex'); }); }
 
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.add('hidden');
-                    menu.classList.remove('flex');
-                });
-            });
-
-            if (logoLink) {
-                logoLink.addEventListener('click', () => {
-                    menu.classList.add('hidden');
-                    menu.classList.remove('flex');
-                });
-            }
-
-            // --- CARROSSEL DE FUNDO ---
+            // CARROSSEL DE FUNDO
             const bgContainer = document.getElementById('hero-bg-container');
-            const images = [
-                'carrossel/1.jpg',
-                'carrossel/2.jpg',
-                'carrossel/3.jpg',
-                'carrossel/4.jpg'
-            ];
-
-            images.forEach((imgUrl, index) => {
+            const heroImages = ['carrossel/1.jpg', 'carrossel/2.jpg', 'carrossel/3.jpg', 'carrossel/4.jpg'];
+            heroImages.forEach((imgUrl, index) => {
                 const div = document.createElement('div');
                 div.className = `carousel-slide ${index === 0 ? 'active' : ''}`;
                 div.style.backgroundImage = `url('${imgUrl}')`;
                 bgContainer.appendChild(div);
             });
-
             const slides = document.querySelectorAll('.carousel-slide');
             let currentIndex = 0;
+            if(slides.length > 1) { setInterval(() => { slides[currentIndex].classList.remove('active'); currentIndex = (currentIndex + 1) % slides.length; slides[currentIndex].classList.add('active'); }, 5000); }
 
-            if(slides.length > 1) {
-                setInterval(() => {
-                    slides[currentIndex].classList.remove('active');
-                    currentIndex = (currentIndex + 1) % slides.length;
-                    slides[currentIndex].classList.add('active');
-                }, 5000);
-            }
-
-            // --- BOTÃO VOLTAR AO TOPO, MENU E INDICADOR ---
+            // BOTÃO VOLTAR TOPO E INDICADOR
             const backToTopBtn = document.getElementById('backToTop');
             const navSobre = document.getElementById('nav-sobre');
             const mobileNavSobre = document.getElementById('mobile-nav-sobre');
             const orcamentoBtn = document.getElementById('header-orcamento-btn');
             const locSection = document.getElementById('localizacao');
-            
-            // Variáveis do Indicador de Menu
             const sections = document.querySelectorAll('section');
             const navItems = document.querySelectorAll('.nav-item');
             const navIndicator = document.getElementById('nav-indicator');
             
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
+                if (scrollY > 400) { backToTopBtn.classList.remove('opacity-0', 'pointer-events-none'); backToTopBtn.classList.add('opacity-100'); }
+                else { backToTopBtn.classList.add('opacity-0', 'pointer-events-none'); }
                 
-                // Controle do Botão Voltar ao Topo
-                if (scrollY > 400) {
-                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-                    backToTopBtn.classList.add('opacity-100', 'translate-y-0');
-                } else {
-                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-                    backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
-                }
-                
-                // Controle do Menu "Sobre" e Botão "Fazer Orçamento"
                 if (scrollY > 50) {
-                    if(navSobre) {
-                        navSobre.classList.remove('opacity-0', 'pointer-events-none', '-translate-x-2');
-                        navSobre.classList.add('opacity-100', 'translate-x-0');
-                    }
+                    if(navSobre) { navSobre.classList.remove('opacity-0', 'pointer-events-none', '-translate-x-2'); navSobre.classList.add('opacity-100', 'translate-x-0'); }
                     if(mobileNavSobre) mobileNavSobre.classList.remove('hidden');
-                    
-                    if (locSection && scrollY < (locSection.offsetTop - window.innerHeight / 2)) {
-                        orcamentoBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-2');
-                        orcamentoBtn.classList.add('opacity-100', 'translate-x-0');
-                    } else {
-                        orcamentoBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-x-2');
-                        orcamentoBtn.classList.remove('opacity-100', 'translate-x-0');
-                    }
+                    if (locSection && scrollY < (locSection.offsetTop - window.innerHeight / 2)) { orcamentoBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-2'); orcamentoBtn.classList.add('opacity-100', 'translate-x-0'); }
+                    else { orcamentoBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-x-2'); orcamentoBtn.classList.remove('opacity-100', 'translate-x-0'); }
                 } else {
-                    if(navSobre) {
-                        navSobre.classList.add('opacity-0', 'pointer-events-none', '-translate-x-2');
-                        navSobre.classList.remove('opacity-100', 'translate-x-0');
-                    }
+                    if(navSobre) { navSobre.classList.add('opacity-0', 'pointer-events-none', '-translate-x-2'); navSobre.classList.remove('opacity-100', 'translate-x-0'); }
                     if(mobileNavSobre) mobileNavSobre.classList.add('hidden');
-                    
-                    orcamentoBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-x-2');
-                    orcamentoBtn.classList.remove('opacity-100', 'translate-x-0');
+                    orcamentoBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-x-2'); orcamentoBtn.classList.remove('opacity-100', 'translate-x-0');
                 }
                 
-                // Lógica do Indicador de Linha Fina (Scrollspy)
-                let currentSectionId = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (scrollY >= sectionTop - 200) { 
-                        currentSectionId = section.getAttribute('id');
-                    }
-                });
-
-                let activeItem = null;
-                navItems.forEach(item => {
-                    item.classList.remove('text-primary');
-                    const href = item.getAttribute('href').substring(1);
-                    if (href === currentSectionId) {
-                        activeItem = item;
-                        item.classList.add('text-primary');
-                    }
-                });
-
-                if (activeItem && currentSectionId !== 'home') {
-                    navIndicator.style.width = `${activeItem.offsetWidth}px`;
-                    navIndicator.style.left = `${activeItem.offsetLeft}px`;
-                    navIndicator.classList.remove('opacity-0');
-                } else {
-                    navIndicator.classList.add('opacity-0');
-                }
+                let currentId = '';
+                sections.forEach(section => { if (scrollY >= section.offsetTop - 200) currentId = section.getAttribute('id'); });
+                let activeElem = null;
+                navItems.forEach(item => { item.classList.remove('text-primary'); const href = item.getAttribute('href').substring(1); if (href === currentId) { activeElem = item; item.classList.add('text-primary'); } });
+                if (activeElem && currentId !== 'home') { navIndicator.style.width = `${activeElem.offsetWidth}px`; navIndicator.style.left = `${activeElem.offsetLeft}px`; navIndicator.classList.remove('opacity-0'); }
+                else { navIndicator.classList.add('opacity-0'); }
             });
 
             window.dispatchEvent(new Event('scroll'));
-            window.addEventListener('resize', () => window.dispatchEvent(new Event('scroll')));
 
-            // --- LIGHTBOX DA GALERIA ---
+            // LIGHTBOX
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const galleryImages = document.querySelectorAll('.gallery-img');
+            galleryImages.forEach(img => { img.addEventListener('click', () => { lightboxImg.src = img.src; lightbox.classList.remove('hidden'); setTimeout(() => { lightbox.classList.remove('opacity-0'); lightboxImg.classList.remove('scale-95'); lightboxImg.classList.add('scale-100'); }, 10); }); });
+            lightbox.addEventListener('click', () => { lightbox.classList.add('opacity-0'); lightboxImg.classList.remove('scale-100'); lightboxImg.classList.add('scale-95'); setTimeout(() => { lightbox.classList.add('hidden'); }, 300); });
 
-            galleryImages.forEach(img => {
-                img.addEventListener('click', () => {
-                    lightboxImg.src = img.src; 
-                    lightbox.classList.remove('hidden');
-                    setTimeout(() => {
-                        lightbox.classList.remove('opacity-0');
-                        lightboxImg.classList.remove('scale-95');
-                        lightboxImg.classList.add('scale-100');
-                    }, 10);
-                });
-            });
-
-            lightbox.addEventListener('click', () => {
-                lightbox.classList.add('opacity-0');
-                lightboxImg.classList.remove('scale-100');
-                lightboxImg.classList.add('scale-95');
-                setTimeout(() => {
-                    lightbox.classList.add('hidden');
-                }, 300);
-            });
-
-            // --- CARROSSEL DE AVALIAÇÕES ---
-            const reviewsTrack = document.getElementById('reviews-track');
-            const prevReviewBtn = document.getElementById('prev-review');
-            const nextReviewBtn = document.getElementById('next-review');
-
-            if(reviewsTrack && prevReviewBtn && nextReviewBtn) {
+            // CARROSSEL AVALIAÇÕES
+            const track = document.getElementById('reviews-track');
+            const prevBtn = document.getElementById('prev-review');
+            const nextBtn = document.getElementById('next-review');
+            if(track && prevBtn && nextBtn) {
                 const scrollAmount = 350; 
-                let autoScrollInterval;
-
-                const startAutoScroll = () => {
-                    autoScrollInterval = setInterval(() => {
-                        if (reviewsTrack.scrollLeft + reviewsTrack.clientWidth >= reviewsTrack.scrollWidth - 10) {
-                            reviewsTrack.scrollTo({ left: 0, behavior: 'smooth' });
-                        } else {
-                            reviewsTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                        }
-                    }, 3500); 
-                };
-
-                const stopAutoScroll = () => {
-                    clearInterval(autoScrollInterval);
-                };
-
-                prevReviewBtn.addEventListener('click', () => {
-                    reviewsTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                    stopAutoScroll();
-                    startAutoScroll(); 
-                });
-
-                nextReviewBtn.addEventListener('click', () => {
-                    if (reviewsTrack.scrollLeft + reviewsTrack.clientWidth >= reviewsTrack.scrollWidth - 10) {
-                        reviewsTrack.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        reviewsTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                    }
-                    stopAutoScroll();
-                    startAutoScroll(); 
-                });
-
-                reviewsTrack.addEventListener('mouseenter', stopAutoScroll);
-                reviewsTrack.addEventListener('mouseleave', startAutoScroll);
-                reviewsTrack.addEventListener('touchstart', stopAutoScroll, {passive: true});
-                reviewsTrack.addEventListener('touchend', startAutoScroll, {passive: true});
-
-                startAutoScroll();
+                let autoScroll = setInterval(() => { if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }, 4500);
+                const resetTimer = () => { clearInterval(autoScroll); autoScroll = setInterval(() => { if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }, 4500); };
+                prevBtn.addEventListener('click', () => { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); resetTimer(); });
+                nextBtn.addEventListener('click', () => { if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); resetTimer(); });
             }
 
-            // --- PROTEÇÃO DO CÓDIGO FONTE ---
-            document.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'F12' || 
-                   (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) || 
-                   (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c')) || 
-                   (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) || 
-                   (e.ctrlKey && (e.key === 'U' || e.key === 'u'))) {
-                    e.preventDefault();
-                }
-            });
+            // PROTEÇÃO
+            document.addEventListener('contextmenu', e => e.preventDefault());
+            document.addEventListener('keydown', e => { if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) || (e.ctrlKey && e.key === 'U')) e.preventDefault(); });
         });
     </script>
 </body>
