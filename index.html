@@ -89,7 +89,7 @@
     <!-- Cabeçalho (Header) FIXO -->
     <header class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 transition-all">
         <div class="px-6 py-4 flex justify-between items-center relative z-20 container mx-auto">
-            <!-- Logo Fixa: Aumentado (+20%) e movido ligeiramente à direita para alinhar com o rodapé -->
+            <!-- Logo Fixa -->
             <a href="#home" id="logo-link" class="flex items-center gap-2 h-14 md:ml-3">
                 <img src="F.png" alt="F Icon" class="h-12 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] brightness-125 contrast-125 saturate-150 transition-all">
             </a>
@@ -317,9 +317,9 @@
     </div>
 </section>
 
-    <!-- Avaliações do Google (Simulação Carrossel) -->
+    <!-- Avaliações do Google (Comentários Reais) -->
     <section id="avaliacoes" class="py-16 bg-[#0a0a0a]">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto">
             <div class="flex flex-col items-center mb-10">
                 <div class="flex items-center gap-3 mb-2">
                     <i class="fa-brands fa-google text-3xl text-white"></i>
@@ -328,170 +328,27 @@
                 <p class="text-textGray text-sm">O que nossos clientes dizem sobre o nosso trabalho.</p>
             </div>
             
-            <div class="relative w-full max-w-6xl mx-auto">
+            <!-- Contêiner Ajustado para 7xl e padding para as setas -->
+            <div class="relative max-w-9xl mx-auto px-8 md:px-12">
                 <!-- Botões de Navegação do Carrossel -->
-                <button id="prev-review" class="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition border border-gray-300">
+                <button id="prev-review" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition border border-gray-300">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <button id="next-review" class="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition border border-gray-300">
+                <button id="next-review" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-200 text-black shadow-lg w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition border border-gray-300">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
 
-                <!-- Container do Carrossel -->
+                <!-- Container do Carrossel com Depoimentos REAIS -->
                 <div id="reviews-track" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar py-4 px-2">
                     
-                    <!-- Comentário 1 -->
+                    <!-- Gian paulo Carrasco -->
                     <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-start mb-4">
                                 <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-xl">CM</div>
+                                    <div class="w-12 h-12 rounded-full bg-orange-600 flex items-center justify-center font-bold text-white text-xl">GC</div>
                                     <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Carlos Mendes</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 2 meses</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
-                            </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Levo os carros da minha empresa na Fáser Car há anos. A funilaria é impecável, entregam no prazo combinado e o processo junto a seguradora é feito sem dor de cabeça nenhuma."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Comentário 2 -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center font-bold text-white text-xl">RS</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Roberto Silva</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 3 meses</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
-                            </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Atendimento excelente. Fizeram a vitrificação no meu carro e o brilho ficou um absurdo, facilita muito para lavar depois. Oficina super limpa e organizada, recomendo a todos em Piracicaba."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Comentário 3 -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center font-bold text-white text-xl">MF</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Mariana Freitas</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 5 meses</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
-                            </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Tive um sinistro e deixei o carro lá pelo seguro. O martelinho de ouro e a pintura deixaram o carro novo de novo, nem parece que foi batido. Cumpriram o prazo certinho."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Comentário 4 -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center font-bold text-white text-xl">FC</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Fernando Costa</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 6 meses</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
-                            </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Fiz a pintura do meu para-choque e a cor ficou exata. Ninguém diz que foi repintado. Atendimento nota 10 e entregaram antes do prazo previsto!"
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Comentário 5 -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center font-bold text-white text-xl">JA</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Juliana Alves</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 8 meses</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
-                            </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Levei meu carro para higienização interna e lavagem completa. O carro saiu parecendo zero quilômetro. O cheiro de novo é incrível, capricharam demais nos bancos!"
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Comentário 6 -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-teal-600 flex items-center justify-center font-bold text-white text-xl">RG</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Ricardo Gomes</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 10 meses</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
-                            </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Melhor oficina de Piracicaba. Resolvi um amassado chato na porta com o martelinho de ouro e ficou perfeito, nem precisou pintar. Profissionais extremamente competentes."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Comentário 7 -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center font-bold text-white text-xl">LM</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Lucas Martins</h4>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Gian paulo Carrasco</h4>
                                         <div class="text-xs text-gray-500 mt-1 flex items-center">
                                             <div class="text-yellow-400 mr-2 flex">
                                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -502,164 +359,66 @@
                                 </div>
                                 <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Serviço de funilaria perfeito. Meu carro sofreu uma batida na traseira e a Fáser Car devolveu como se tivesse saído da concessionária. Parabéns à equipe."
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Excelente atendimento, profissionais educados e simpáticos, entendem muito de carro !! Fiquei com vontade de bater o carro novamente só pra voltar la !! Hahaha mas melhor não kkkkkk"
                             </p>
                         </div>
                     </div>
 
-                    <!-- Comentário 8 -->
+                    <!-- leandro carvalho -->
                     <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-start mb-4">
                                 <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center font-bold text-white text-xl">AP</div>
+                                    <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-xl">LC</div>
                                     <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Ana Paula</h4>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">leandro carvalho</h4>
                                         <div class="text-xs text-gray-500 mt-1 flex items-center">
                                             <div class="text-yellow-400 mr-2 flex">
                                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                             </div>
-                                            <span>Há 1 ano</span>
+                                            <span>Há 6 anos</span>
                                         </div>
                                     </div>
                                 </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Fiz o polimento técnico e vitrificação. O carro ficou um espelho! Recomendo muito o trabalho do Arnaldo e de toda a equipe."
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Ótimo atendimento serviço de alta qualidade e confiança."
                             </p>
                         </div>
                     </div>
 
-                    <!-- Comentário 9 -->
+                    <!-- Fernando Furlan -->
                     <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-start mb-4">
                                 <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center font-bold text-white text-xl">GP</div>
+                                    <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center font-bold text-white text-xl">FF</div>
                                     <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Gabriel Pereira</h4>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Fernando Furlan</h4>
                                         <div class="text-xs text-gray-500 mt-1 flex items-center">
                                             <div class="text-yellow-400 mr-2 flex">
                                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                             </div>
-                                            <span>Há 1 ano</span>
+                                            <span>Há 4 anos</span>
                                         </div>
                                     </div>
                                 </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Oficina de extrema confiança. Preço justo e qualidade impecável. A pintura não tem nenhuma diferença de tom e a textura ficou original."
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Ótimo lugar, excelente atendimento, já precisei dos serviços e foi muito bem resolvido com perfeição"
                             </p>
                         </div>
                     </div>
 
-                    <!-- Comentário 10 -->
+                    <!-- Cesar Camarinha -->
                     <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-start mb-4">
                                 <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center font-bold text-white text-xl">TR</div>
+                                    <div class="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center font-bold text-white text-xl">CC</div>
                                     <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Thiago Ribeiro</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 1 ano</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
-                            </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Levei pela seguradora Porto Seguro. Processo super rápido, não precisei me preocupar com absolutamente nada. Entregaram no prazo estipulado."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Comentário 11 -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-red-400 flex items-center justify-center font-bold text-white text-xl">CS</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Camila Santos</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 2 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
-                            </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Excelente atendimento! Fizeram a higienização interna e tiraram manchas do banco que eu achava que seriam impossíveis de sair."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Comentário 12 -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center font-bold text-white text-xl">VN</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Vitor Nunes</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 2 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
-                            </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "O martelinho de ouro deles é fantástico. Tiraram os amassados de chuva de granizo sem precisar repintar o teto inteiro."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Comentário 13 -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center font-bold text-white text-xl">ML</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marcos Lima</h4>
-                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
-                                            <div class="text-yellow-400 mr-2 flex">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>Há 2 anos</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
-                            </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Trabalho muito profissional. A estufa deles garante que a pintura fique sem poeira ou imperfeições. É realmente um serviço premium."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Comentário 14 -->
-                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-pink-600 flex items-center justify-center font-bold text-white text-xl">DP</div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Daniela Pinto</h4>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Cesar Camarinha</h4>
                                         <div class="text-xs text-gray-500 mt-1 flex items-center">
                                             <div class="text-yellow-400 mr-2 flex">
                                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -668,22 +427,251 @@
                                         </div>
                                     </div>
                                 </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Sempre levo os carros da frota da nossa empresa lá. Agilidade e transparência no orçamento. Nunca decepcionam, indico de olhos fechados."
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Pessoal altamente capacitado. Muita gentileza no atendimento. Recomendo."
                             </p>
                         </div>
                     </div>
 
-                    <!-- Comentário 15 -->
+                    <!-- Marco Polo Baptista -->
                     <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
                         <div>
                             <div class="flex justify-between items-start mb-4">
                                 <div class="flex gap-4 items-center">
-                                    <div class="w-12 h-12 rounded-full bg-cyan-600 flex items-center justify-center font-bold text-white text-xl">RA</div>
+                                    <div class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center font-bold text-white text-xl">MB</div>
                                     <div>
-                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Rafael Almeida</h4>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marco Polo Baptista</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 2 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Serviços da mais alta qualidade, confiança e rapidez tbm são pontos fortes, recomendo sem sombra de dúvidas."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Rogerio Monteiro -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-yellow-600 flex items-center justify-center font-bold text-white text-xl">RM</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Rogerio Monteiro</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 4 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Excelente atendimento... Principalmente a Aline, que acompanhou o meu caso do início ao fim, me dando todo o feedback do serviço."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Marilea cavagis -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-teal-600 flex items-center justify-center font-bold text-white text-xl">MC</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marilea cavagis</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 6 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Eu quero agradecer pelo trabalho MARAVILHOSO que vcs toda a equipe da oficina fizeram no meu carro.. Ele ficou lindo, serviço perfeito adorei e eu hei de voltar aí..."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Marcos Moreira -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center font-bold text-white text-xl">MM</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marcos Moreira</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 2 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Ótimo atendimento, serviço de qualidade, bom preço"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Angel Violet Evergarden -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-pink-600 flex items-center justify-center font-bold text-white text-xl">AV</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Angel Violet Evergarden</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 1 ano</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Uma oficina perfeita. Estão de parabéns desde a secretaria até os mecânicos. Parabéns."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Diogo Rubia -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-cyan-600 flex items-center justify-center font-bold text-white text-xl">DR</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Diogo Rubia</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 8 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Top demais melhor serviço da região"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Marli Nolasco -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-orange-400 flex items-center justify-center font-bold text-white text-xl">MN</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marli Nolasco</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 2 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Excelente trabalho! Entrega antes do prazo! Eficiência na execução do serviço!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Paulino Akira Shimabukuro -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center font-bold text-white text-xl">PS</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Paulino Akira Shimabukuro</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 4 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Excelentes profissionais, ótimo atendimento e serviço de primeira."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Fabiane da Silva Almeida -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-red-400 flex items-center justify-center font-bold text-white text-xl">FA</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Fabiane da Silva Almeida</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 2 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Atendimento e serviço excelente"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Mel Crivello -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-pink-400 flex items-center justify-center font-bold text-white text-xl">MC</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Mel Crivello</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 4 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Excelente atendimento e excelente trabalho!!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Jair Citron -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center font-bold text-white text-xl">JC</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Jair Citron</h4>
                                         <div class="text-xs text-gray-500 mt-1 flex items-center">
                                             <div class="text-yellow-400 mr-2 flex">
                                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -692,10 +680,78 @@
                                         </div>
                                     </div>
                                 </div>
-                                <i class="fa-brands fa-google text-blue-500 text-xl opacity-50"></i>
                             </div>
-                            <p class="text-sm text-gray-700 leading-relaxed font-medium">
-                                "Fui por indicação e não me arrependi. Atendimento direto e sincero. Meu capô estava queimado de sol e agora está parecendo carro novo na loja."
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Muito bom serviço"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hamilton Alonso Concrevi -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-green-400 flex items-center justify-center font-bold text-white text-xl">HA</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Hamilton Alonso Concrevi</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 7 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Serviços perfeitos e o Fábio e a Aline são ótimos"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Marcio Garcia -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center font-bold text-white text-xl">MG</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Marcio Garcia</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 4 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "Seu carro sai como novo.... Atendimento então sem palavras...."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Saga Som Prudente -->
+                    <div class="min-w-[300px] md:min-w-[350px] max-w-[350px] shrink-0 snap-center border border-zinc-800 p-6 bg-white rounded-xl text-gray-800 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex gap-4 items-center">
+                                    <div class="w-12 h-12 rounded-full bg-indigo-400 flex items-center justify-center font-bold text-white text-xl">SS</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-base leading-tight">Saga Som Prudente</h4>
+                                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                                            <div class="text-yellow-400 mr-2 flex">
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>Há 2 anos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 leading-relaxed font-medium italic">
+                                "A melhor oficina de Martelinho de ouro Funilaria e Pintura da região metropolitana de Piracicaba"
                             </p>
                         </div>
                     </div>
@@ -954,31 +1010,26 @@
                 
                 // Controle do Menu "Sobre" e Botão "Fazer Orçamento"
                 if (scrollY > 50) {
-                    // Exibe o "Sobre"
                     if(navSobre) {
                         navSobre.classList.remove('opacity-0', 'pointer-events-none', '-translate-x-2');
                         navSobre.classList.add('opacity-100', 'translate-x-0');
                     }
                     if(mobileNavSobre) mobileNavSobre.classList.remove('hidden');
                     
-                    // Exibe o Botão "Fazer Orçamento" SE não estiver na secção do mapa
                     if (locSection && scrollY < (locSection.offsetTop - window.innerHeight / 2)) {
                         orcamentoBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-2');
                         orcamentoBtn.classList.add('opacity-100', 'translate-x-0');
                     } else {
-                        // Esconde o Botão ao chegar no mapa
                         orcamentoBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-x-2');
                         orcamentoBtn.classList.remove('opacity-100', 'translate-x-0');
                     }
                 } else {
-                    // Esconde "Sobre" no topo
                     if(navSobre) {
                         navSobre.classList.add('opacity-0', 'pointer-events-none', '-translate-x-2');
                         navSobre.classList.remove('opacity-100', 'translate-x-0');
                     }
                     if(mobileNavSobre) mobileNavSobre.classList.add('hidden');
                     
-                    // Esconde o Botão no topo
                     orcamentoBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-x-2');
                     orcamentoBtn.classList.remove('opacity-100', 'translate-x-0');
                 }
@@ -987,7 +1038,6 @@
                 let currentSectionId = '';
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    // Offset para compensar a altura do cabeçalho
                     if (scrollY >= sectionTop - 200) { 
                         currentSectionId = section.getAttribute('id');
                     }
@@ -1003,7 +1053,6 @@
                     }
                 });
 
-                // Posiciona o indicador ou o oculta caso esteja no início
                 if (activeItem && currentSectionId !== 'home') {
                     navIndicator.style.width = `${activeItem.offsetWidth}px`;
                     navIndicator.style.left = `${activeItem.offsetLeft}px`;
@@ -1013,7 +1062,6 @@
                 }
             });
 
-            // Dispara os eventos uma vez ao carregar
             window.dispatchEvent(new Event('scroll'));
             window.addEventListener('resize', () => window.dispatchEvent(new Event('scroll')));
 
@@ -1026,7 +1074,6 @@
                 img.addEventListener('click', () => {
                     lightboxImg.src = img.src; 
                     lightbox.classList.remove('hidden');
-                    
                     setTimeout(() => {
                         lightbox.classList.remove('opacity-0');
                         lightboxImg.classList.remove('scale-95');
@@ -1039,7 +1086,6 @@
                 lightbox.classList.add('opacity-0');
                 lightboxImg.classList.remove('scale-100');
                 lightboxImg.classList.add('scale-95');
-                
                 setTimeout(() => {
                     lightbox.classList.add('hidden');
                 }, 300);
