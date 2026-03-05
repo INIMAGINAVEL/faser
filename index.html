@@ -96,6 +96,7 @@
 <body class="font-sans antialiased overflow-x-hidden">
 
     <!-- Cabeçalho (Header) FIXO -->
+    <!-- Alterado os breakpoints de lg para xl para evitar quebra no zoom de 200% -->
     <header class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 transition-all">
         <div class="px-6 py-4 flex justify-between items-center relative z-20 container mx-auto">
             <!-- Logo Fixa -->
@@ -104,7 +105,7 @@
             </a>
 
             <!-- Navegação (Desktop) -->
-            <nav class="hidden lg:flex gap-8 text-sm font-semibold text-white relative" id="desktop-nav">
+            <nav class="hidden xl:flex gap-8 text-sm font-semibold text-white relative" id="desktop-nav">
                 <a href="#home" id="nav-sobre" class="nav-item hover:text-primary transition-all duration-500 opacity-0 pointer-events-none -translate-x-2">Sobre</a>
                 <a href="#servicos" class="nav-item hover:text-primary transition">Especialidades</a>
                 <a href="#seguradoras" class="nav-item hover:text-primary transition">Seguradoras</a>
@@ -114,7 +115,7 @@
             </nav>
 
             <!-- Contato e Botão -->
-            <div class="hidden lg:flex items-center gap-6">
+            <div class="hidden xl:flex items-center gap-6">
                 <div class="flex items-center gap-4 border-r border-zinc-700 pr-6">
                     <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded border border-zinc-800">
                         <i class="fa-solid fa-phone text-primary text-2xl"></i>
@@ -134,7 +135,8 @@
                 <a href="#localizacao" id="header-orcamento-btn" class="bg-primary text-white px-6 py-2.5 font-bold text-base hover:bg-primaryHover transition-all duration-500 rounded opacity-0 pointer-events-none translate-x-2 shadow-lg shadow-primary/20">Fazer Orçamento</a>
             </div>
             
-            <div class="lg:hidden flex items-center gap-5">
+            <!-- Menu Hamburguer para Mobile e Telas com Zoom/Menores -->
+            <div class="xl:hidden flex items-center gap-5">
                 <a href="tel:+551934113939" class="text-white text-2xl hover:text-primary transition" title="Ligar Fixo"><i class="fa-solid fa-phone"></i></a>
                 <a href="https://wa.me/5519996159600" target="_blank" class="text-brandGreen text-3xl hover:text-green-400 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <button id="mobile-menu-btn" class="text-white text-3xl focus:outline-none ml-1"><i class="fa-solid fa-bars"></i></button>
@@ -168,7 +170,9 @@
                 </div>
                 <img src="f%C3%A1ser-acento.png" alt="Fáser Car" class="w-full max-w-[380px] md:max-w-[533px] lg:max-w-[650px] object-contain mb-2 md:-mb-4 lg:-mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] brightness-125 contrast-125 saturate-150 relative z-20">
                 <h1 class="sr-only">Fáser Car</h1>
-                <h2 class="text-4xl md:text-6xl font-extrabold uppercase leading-none text-outline mb-6 relative z-10 pt-2 md:pt-0">Funilaria e Pintura</h2>
+                
+                <!-- Subtítulo atualizado -->
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold uppercase leading-none text-outline mb-6 relative z-10 pt-2 md:pt-0">Referência em Funilaria, Pintura e Estética com Martelinho de Ouro.</h2>
                 
                 <p class="text-gray-300 mb-12 text-base leading-loose max-w-xl">
                     A Fáser Car é o centro automotivo de referência em Piracicaba e região para reparos de colisões e estética. Trabalhamos com <strong>veículos modernos de todas as marcas</strong> (nacionais e importados), entregando funilaria de alto padrão, pintura impecável em estufa e agilidade no processo. Atendemos pessoas físicas, frotas empresariais (PJ) e somos credenciados e parceiros de <strong>todas as seguradoras</strong>.
@@ -525,7 +529,6 @@
             <div class="max-w-4xl mx-auto text-center mb-10">
                 <h2 class="text-3xl font-bold mb-4">Venha Fazer Seu <span class="text-primary">Orçamento</span></h2>
                 
-                <!-- Alerta Importante -->
                 <div class="bg-primary/10 border border-primary text-red-100 p-4 rounded-lg inline-block text-sm font-medium mb-8">
                     <i class="fa-solid fa-triangle-exclamation text-primary mr-2"></i> 
                     <strong>Atenção:</strong> Não realizamos orçamentos via foto. Para garantir a precisão e honestidade dos valores, a avaliação deve ser feita presencialmente. Ligue ou mande mensagem para mais informações!
@@ -537,7 +540,6 @@
                     <div>
                         <h3 class="text-2xl font-bold mb-6 text-white border-b border-zinc-800 pb-4">Onde Estamos</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                            <!-- Box Endereço -->
                             <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
                                 <strong class="block text-white text-lg mb-1 text-sm uppercase tracking-wider">Endereço</strong>
                                 <div class="flex items-start gap-3 text-textGray text-sm">
@@ -546,7 +548,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Box Contatos (Com novo E-mail) -->
                             <div class="flex flex-col justify-start gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800">
                                 <strong class="block text-white text-lg mb-1 text-sm uppercase tracking-wider">Contatos</strong>
                                 <div class="flex items-center gap-3 text-textGray text-sm font-medium mt-2">
@@ -557,14 +558,12 @@
                                     <i class="fa-solid fa-phone text-primary text-xl"></i>
                                     <a href="tel:+551934113939" class="hover:text-white transition">(19) 3411-3939</a>
                                 </div>
-                                <!-- Nova inclusão de Email -->
                                 <div class="flex items-center gap-3 text-textGray text-sm font-medium mt-4">
                                     <i class="fa-regular fa-envelope text-zinc-400 text-xl"></i>
                                     <a href="mailto:contato@fasercar.com" class="hover:text-white transition">contato@fasercar.com</a>
                                 </div>
                             </div>
                             
-                            <!-- Box Horários -->
                             <div class="flex flex-col justify-center gap-3 bg-zinc-900/80 p-5 rounded border border-zinc-800 md:col-span-2">
                                 <strong class="block text-white mb-2 flex items-center gap-2 text-sm uppercase tracking-wider">
                                     <i class="fa-regular fa-clock text-primary text-xl"></i> Horário de Funcionamento
@@ -737,7 +736,7 @@
             galleryImages.forEach(img => { img.addEventListener('click', () => { lightboxImg.src = img.src; lightbox.classList.remove('hidden'); setTimeout(() => { lightbox.classList.remove('opacity-0'); lightboxImg.classList.remove('scale-95'); lightboxImg.classList.add('scale-100'); }, 10); }); });
             lightbox.addEventListener('click', () => { lightbox.classList.add('opacity-0'); lightboxImg.classList.remove('scale-100'); lightboxImg.classList.add('scale-95'); setTimeout(() => { lightbox.classList.add('hidden'); }, 300); });
 
-            // CARROSSEL AVALIAÇÕES (COM PAUSAS DE INTERAÇÃO)
+            // CARROSSEL AVALIAÇÕES
             const track = document.getElementById('reviews-track');
             const prevBtn = document.getElementById('prev-review');
             const nextBtn = document.getElementById('next-review');
