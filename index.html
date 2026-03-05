@@ -12,8 +12,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Adicionado Orbitron como fallback desportivo para a fonte Senna) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -21,6 +21,8 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        // Define a Senna e coloca a Orbitron como segunda opção
+                        senna: ['Senna', 'Orbitron', 'sans-serif'],
                     },
                     colors: {
                         primary: '#C8102E',
@@ -43,6 +45,17 @@
         }
     </script>
     <style>
+        /* Chamada da Fonte Local Senna Bold */
+        @font-face {
+            font-family: 'Senna';
+            /* Deve colocar o ficheiro Senna-Bold.ttf na mesma pasta do index.html */
+            src: url('Senna-Bold.woff2') format('woff2'),
+                 url('Senna-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 80px; 
@@ -96,7 +109,7 @@
 <body class="font-sans antialiased overflow-x-hidden">
 
     <!-- Cabeçalho (Header) FIXO -->
-    <!-- Alterado os breakpoints de lg para xl para evitar quebra no zoom de 200% -->
+    <!-- Breakpoint alterado para 2xl (1536px) para resolver o problema do Zoom de 200% em 4K -->
     <header class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 transition-all">
         <div class="px-6 py-4 flex justify-between items-center relative z-20 container mx-auto">
             <!-- Logo Fixa -->
@@ -104,8 +117,8 @@
                 <img src="F.png" alt="F Icon" class="h-12 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] brightness-125 contrast-125 saturate-150 transition-all">
             </a>
 
-            <!-- Navegação (Desktop) -->
-            <nav class="hidden xl:flex gap-8 text-sm font-semibold text-white relative" id="desktop-nav">
+            <!-- Navegação (Desktop) usando 2xl -->
+            <nav class="hidden 2xl:flex gap-8 text-sm font-semibold text-white relative" id="desktop-nav">
                 <a href="#home" id="nav-sobre" class="nav-item hover:text-primary transition-all duration-500 opacity-0 pointer-events-none -translate-x-2">Sobre</a>
                 <a href="#servicos" class="nav-item hover:text-primary transition">Especialidades</a>
                 <a href="#seguradoras" class="nav-item hover:text-primary transition">Seguradoras</a>
@@ -114,8 +127,8 @@
                 <div id="nav-indicator" class="absolute -bottom-[18px] h-[2px] bg-primary transition-all duration-300 opacity-0 pointer-events-none rounded-none" style="width: 0; left: 0;"></div>
             </nav>
 
-            <!-- Contato e Botão -->
-            <div class="hidden xl:flex items-center gap-6">
+            <!-- Contato e Botão usando 2xl -->
+            <div class="hidden 2xl:flex items-center gap-6">
                 <div class="flex items-center gap-4 border-r border-zinc-700 pr-6">
                     <div class="flex items-center gap-2 bg-zinc-900/50 px-3 py-1.5 rounded border border-zinc-800">
                         <i class="fa-solid fa-phone text-primary text-2xl"></i>
@@ -135,8 +148,8 @@
                 <a href="#localizacao" id="header-orcamento-btn" class="bg-primary text-white px-6 py-2.5 font-bold text-base hover:bg-primaryHover transition-all duration-500 rounded opacity-0 pointer-events-none translate-x-2 shadow-lg shadow-primary/20">Fazer Orçamento</a>
             </div>
             
-            <!-- Menu Hamburguer para Mobile e Telas com Zoom/Menores -->
-            <div class="xl:hidden flex items-center gap-5">
+            <!-- Menu Hamburguer para Mobile e Telas com Zoom/Menores usando 2xl -->
+            <div class="2xl:hidden flex items-center gap-5">
                 <a href="tel:+551934113939" class="text-white text-2xl hover:text-primary transition" title="Ligar Fixo"><i class="fa-solid fa-phone"></i></a>
                 <a href="https://wa.me/5519996159600" target="_blank" class="text-brandGreen text-3xl hover:text-green-400 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <button id="mobile-menu-btn" class="text-white text-3xl focus:outline-none ml-1"><i class="fa-solid fa-bars"></i></button>
@@ -171,8 +184,8 @@
                 <img src="f%C3%A1ser-acento.png" alt="Fáser Car" class="w-full max-w-[380px] md:max-w-[533px] lg:max-w-[650px] object-contain mb-2 md:-mb-4 lg:-mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] brightness-125 contrast-125 saturate-150 relative z-20">
                 <h1 class="sr-only">Fáser Car</h1>
                 
-                <!-- Subtítulo atualizado -->
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold uppercase leading-none text-outline mb-6 relative z-10 pt-2 md:pt-0">Referência em Funilaria, Pintura e Estética com Martelinho de Ouro.</h2>
+                <!-- Subtítulo atualizado: Fonte Senna adicionada, tamanho reduzido e espaçamento afinado -->
+                <h2 class="text-xl md:text-2xl lg:text-3xl font-senna uppercase leading-tight text-outline mb-6 relative z-10 pt-2 md:pt-4 max-w-2xl">Referência em Funilaria, Pintura e Estética com Martelinho de Ouro.</h2>
                 
                 <p class="text-gray-300 mb-12 text-base leading-loose max-w-xl">
                     A Fáser Car é o centro automotivo de referência em Piracicaba e região para reparos de colisões e estética. Trabalhamos com <strong>veículos modernos de todas as marcas</strong> (nacionais e importados), entregando funilaria de alto padrão, pintura impecável em estufa e agilidade no processo. Atendemos pessoas físicas, frotas empresariais (PJ) e somos credenciados e parceiros de <strong>todas as seguradoras</strong>.
